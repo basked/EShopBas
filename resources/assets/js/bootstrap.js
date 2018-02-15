@@ -13,10 +13,25 @@ try {
 
     require('bootstrap');
     // для админки dark-admin
-    require('chart.js/dist/Chart.min.js');
+
     require('messenger-hubspot/build/js/messenger.min.js');
     require('jquery.cookie/jquery.cookie.js');
+    // для админки dark-admin работа с таблицами // нкжно придумаьб как загружыть только для datatables
+    require('datatables.net/js/jquery.dataTables');
+    require('datatables.net-bs4/js/dataTables.bootstrap4');
+    require('datatables.net-responsive/js/dataTables.responsive.min');
+    require('datatables.net-responsive-bs4/js/responsive.bootstrap4.min');
+    require('chart.js/dist/Chart.min.js');
+    // gaugeJS
+   // require('gaugeJS/dist/gauge.min');
+   // require('jquery-sparkline/jquery.sparkline.min');
+    // forms-ardanced
+    require('bootstrap-select/dist/js/bootstrap-select.min');
+    require('bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min');
+    require('bootstrap-datepicker/dist/js/bootstrap-datepicker.min');
+    require('bootstrap-tagsinput/src/bootstrap-tagsinput');
 
+    require('nouislider/distribute/nouislider.min');
 } catch (e) {}
 
 /**
