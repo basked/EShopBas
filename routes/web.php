@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/test', 'HomeController@test');
+Route::get('/testSetDB', 'HomeController@testSetDB');
+
+Route::get('dashboard',function (){
+   return view('layouts.layout');
+});
