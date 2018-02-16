@@ -13,15 +13,17 @@ let Admintable = require('./components/AdminTable.vue');
 let Admindashboard = require('./components/AdminDashboard.vue');
 
 const admfooter = new Vue({
-    el: '#admin-footer',
+    el: '#admfooter',
     components: {Adminfooter}
 });
+/*bas! пока закоментим
 const admdashboard = new Vue({
-    el: '#admin-dashboard',
+    el: '#admdashboard',
     components: {Admindashboard}
 });
 const admtable = new Vue({
-    el: '#admin-table',
+    el: '#admtable',
     components: {Admintable}
 });
 
+*/

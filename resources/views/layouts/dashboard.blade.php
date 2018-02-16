@@ -1,3 +1,34 @@
+@section('css')
+    <link href="{{ asset('css/dark-admin/css/font.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dark-admin/css/custom.css') }}" rel="stylesheet">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <link href="{{ asset('css/style.default.premium.css') }}" rel="stylesheet" id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet" href="{{ asset('css/style.default.premium.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    <style type="text/css">/* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }</style>
+@endsection
+
 @extends('layouts.layout')
 @section('content')
     <div class="page-content">
@@ -449,6 +480,7 @@
                                             class="d-block">Sales</span>
                                 </div>
                             </div>
+                            u
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -478,12 +510,11 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="footer__block block no-margin-bottom">
-                <div class="container-fluid text-center">
-                    <p class="no-margin-bottom">2018 &copy; Your company. </p>
-                </div>
-            </div>
-        </footer>
+        @section('js')
+            <script src="{{ asset('css/dark-admin/js/charts-home.js') }}"></script>
+            <script src="{{ asset('css/dark-admin/js/home-premium.js') }}"></script>
+            <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
+        @endsection
+
     </div>
 @endsection

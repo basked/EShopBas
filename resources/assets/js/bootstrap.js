@@ -10,7 +10,8 @@ window.Popper = require('popper.js').default;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
+    // для графиков
+    window.Chart = require('chart.js/dist/Chart.js');
     require('bootstrap');
     // для админки dark-admin
 
@@ -21,14 +22,14 @@ try {
     require('datatables.net-bs4/js/dataTables.bootstrap4');
     require('datatables.net-responsive/js/dataTables.responsive.min');
     require('datatables.net-responsive-bs4/js/responsive.bootstrap4.min');
-    require('chart.js/dist/Chart.min.js');
+   // require('chart.js/dist/Chart.js');
     // gaugeJS
-   // require('gaugeJS/dist/gauge.min');
-   // require('jquery-sparkline/jquery.sparkline.min');
+    require('gaugeJS/dist/gauge.min');
+    require('jquery-sparkline/jquery.sparkline.min');
     // forms-ardanced
     require('bootstrap-select/dist/js/bootstrap-select.min');
     require('bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min');
-    require('bootstrap-datepicker/dist/js/bootstrap-datepicker.min');
+    require('bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js');
     require('bootstrap-tagsinput/src/bootstrap-tagsinput');
 
     require('nouislider/distribute/nouislider.min');

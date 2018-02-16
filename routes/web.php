@@ -38,7 +38,7 @@ Route::get('charts',function (){
    return view('layouts.charts', ['name' => 'basked.pro']);
 });
 
-Route::get('chartsgauge',function (){
+Route::get('charts-gauge',function (){
    return view('layouts.chartsgauge', ['name' => 'basked.pro']);
 });
 Route::get('forms',function (){

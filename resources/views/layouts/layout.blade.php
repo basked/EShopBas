@@ -7,24 +7,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!--dark-admin-->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dark-admin/css/font.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dark-admin/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dark-admin/css/responsive.bootstrap4.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dark-admin/css/style.default.premium.css') }}" rel="stylesheet" id="theme-stylesheet">
-    <link href="{{ asset('css/dark-admin/css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dark-admin/css/font.css') }}" rel="shortcut icon">
     <link href="{{ asset('css/dark-admin/img/favicon.ico') }}" rel="shortcut icon">
-
-
+    @yield('css')
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Google fonts - Muli-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 
 </head>
@@ -60,7 +51,7 @@
                     <div aria-labelledby="navbarDropdownMenuLink1" class="dropdown-menu messages"><a href="#"
                                                                                                      class="dropdown-item message d-flex align-items-center">
                             <div class="profile"><img
-                                        src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/avatar-3.jpg"
+                                        src="{{asset('css/dark-admin/img/avatar-3.jpg') }}"
                                         alt="..." class="img-fluid">
                                 <div class="status online"></div>
                             </div>
@@ -69,7 +60,7 @@
                             </div>
                         </a><a href="#" class="dropdown-item message d-flex align-items-center">
                             <div class="profile"><img
-                                        src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/avatar-2.jpg"
+                                        src="{{asset('css/dark-admin/img/avatar-2.jpg') }}"
                                         alt="..." class="img-fluid">
                                 <div class="status away"></div>
                             </div>
@@ -78,7 +69,7 @@
                             </div>
                         </a><a href="#" class="dropdown-item message d-flex align-items-center">
                             <div class="profile"><img
-                                        src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/avatar-1.jpg"
+                                        src="{{asset('css/dark-admin/img/avatar-1.jpg') }}"
                                         alt="..." class="img-fluid">
                                 <div class="status busy"></div>
                             </div>
@@ -87,7 +78,7 @@
                             </div>
                         </a><a href="#" class="dropdown-item message d-flex align-items-center">
                             <div class="profile"><img
-                                        src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/avatar-5.jpg"
+                                        src="{{asset('css/dark-admin/img/avatar-5.jpg') }}"
                                         alt="..." class="img-fluid">
                                 <div class="status offline"></div>
                             </div>
@@ -237,7 +228,7 @@
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img
-                        src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/avatar-6.jpg"
+                        src="{{asset('css/dark-admin/img/avatar-6.jpg') }}"
                         alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
                 <h1 class="h5">Mark Stephen</h1>
@@ -246,15 +237,16 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-            <li class="active"><a href="{{ url('/dashboard') }}"> <i class="icon-home"></i>Home </a></li>
-            <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tables
+            <li><a href="{{ url('/dashboard') }}"> <i class="icon-home"></i>Home </a></li>
+            <li class="active"><a href="#tablesDropdown" aria-expanded="true" data-toggle="collapse"> <i
+                            class="icon-grid"></i>Tables
                 </a>
-                <ul id="tablesDropdown" class="collapse list-unstyled ">
+                <ul id="tablesDropdown" class="collapse list-unstyled show">
                     <li><a href="{{ url('/tables') }}">Bootstrap tables</a></li>
-                    <li><a href="{{ url('/datatables') }}">Datatable</a></li>
+                    <li class="active"><a href="{{ url('/datatables') }}">Datatable</a></li>
                 </ul>
             </li>
-            <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i
+            <li><a href="#chartsDropdown" aria-expanded="false" class="active" data-toggle="collapse"> <i
                             class="fa fa-bar-chart"></i>Charts </a>
                 <ul id="chartsDropdown" class="collapse list-unstyled ">
                     <li><a href="{{ url('/charts') }}">Charts</a></li>
@@ -293,12 +285,12 @@
     </nav>
     <!-- Sidebar Navigation end-->
 
-   <!--Dashboard -->
-    @yield('content')
-   <!--Vue Component <Admindashboard id="admin-dashboard"></Admindashboard>-->
-   <!--Dashboard End-->
+    <!--Dashboard -->
+@yield('content')
+<!--Vue Component <Admindashboard id="admin-dashboard"></Admindashboard>-->
+    <!--Dashboard End-->
 
-    <Adminfooter id="admin-footer"></Adminfooter>
+    <Adminfooter id="admfooter"></Adminfooter>
 </div>
 <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button"
         class="btn btn-primary btn-sm d-none d-md-inline-block"><i class="fa fa-cog fa-2x"></i></button>
@@ -315,26 +307,17 @@
             <option value="blue.premium">blue</option>
         </select>
     </form>
-    <p><img src="https://d19m59y37dris4.cloudfront.net/dark-admin-premium/1-3-2/img/template-mac.png" alt=""
+    <p><img src="{{ asset('css/dark-admin/img/template-mac.png') }}" alt=""
             class="img-fluid"></p>
     <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads.
         This will not happen in your production code.</p>
 </div>
 
 <!-- JavaScript files-->
+
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('css/dark-admin/js/popper.min.js') }}"></script>
-<script src="{{ asset('css/dark-admin/js/home-premium.js') }}"></script>
-<script src="{{ asset('css/dark-admin/js/charts-home.js') }}"></script>
-<script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
 
-<script src="{{ asset('css/dark-admin/js/tables-datatable.js') }}"></script>
-
-<script src="{{ asset('css/dark-admin/js/charts-custom.js') }}"></script>
-<!--<script src="css/dark-admin/js/charts-gauge-sparkline.js"></script>-->
-<script src="{{ asset('css/dark-admin/js/forms-advanced.js') }}"></script>
-
-
+@yield('js')
 
 
 </body>
