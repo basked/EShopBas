@@ -148,8 +148,9 @@
                 </div>
             </div>
         </section>
-        @section('css')
+        @section('js')
             <script src="{{ asset('css/dark-admin/js/gauge.min.js') }}"></script>
+            <script src="{{ asset('css/dark-admin/js/charts-gauge-sparkline.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
         @endsection
 
