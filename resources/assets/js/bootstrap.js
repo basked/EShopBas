@@ -12,7 +12,11 @@ try {
     window.$ = window.jQuery = require('jquery');
     // для графиков
     window.Chart = require('chart.js/dist/Chart.js');
-    require('bootstrap');
+    window.TypeaHead =require('bootstrap-3-typeahead/bootstrap3-typeahead.min');
+     // слайдер обзываем noUiSlider для коректной работы form-adwansed.js
+    window.noUiSlider= require('nouislider/distribute/nouislider.min');
+    window.select=require('bootstrap-select/dist/js/bootstrap-select.min');
+        require('bootstrap');
     // для админки dark-admin
 
     require('messenger-hubspot/build/js/messenger.min.js');
@@ -22,17 +26,25 @@ try {
     require('datatables.net-bs4/js/dataTables.bootstrap4');
     require('datatables.net-responsive/js/dataTables.responsive.min');
     require('datatables.net-responsive-bs4/js/responsive.bootstrap4.min');
-   // require('chart.js/dist/Chart.js');
+
     // gaugeJS
     require('gaugeJS/dist/gauge.min');
     require('jquery-sparkline/jquery.sparkline.min');
-    // forms-ardanced
-    require('bootstrap-select/dist/js/bootstrap-select.min');
-    require('bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min');
-    require('bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js');
-    require('bootstrap-tagsinput/src/bootstrap-tagsinput');
+    // forms-ardwanced
 
-    require('nouislider/distribute/nouislider.min');
+    require('bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min');
+    require('bootstrap-datepicker/dist/js/bootstrap-datepicker.min');
+    require('bootstrap-tagsinput/src/bootstrap-tagsinput');
+    require('jasny-bootstrap/dist/js/jasny-bootstrap.min');
+    require('multiselect/js/jquery.multi-select.js');
+
+    // editors
+    // summernote
+    require('summernote/dist/summernote-bs4.min');
+    // dropezone
+    window.Dropzone=require('dropzone/dist/dropzone');
+
+
 } catch (e) {}
 
 /**
