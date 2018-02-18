@@ -60,6 +60,11 @@ try {
     require('ladda/dist/spin.min.js');
     window.Ladda =require('ladda/dist/ladda.min.js');
 
+    //BEGIN DEVEXTREME
+
+    //END DEVEXTREME
+
+
 } catch (e) {
 }
 

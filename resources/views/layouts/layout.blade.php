@@ -18,8 +18,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 
+
 </head>
-<body>
+<body class="dx-viewport">
 <header class="header">
     <nav class="navbar navbar-expand-lg">
         <div class="search-panel">

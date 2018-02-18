@@ -84,6 +84,18 @@
                     <li><a href="{{ url('/components-preloader') }}">Preloaders</a></li>
                 </ul>
             </li>
+
+            <li><a href="#devextremeDropdown" aria-expanded="false" data-toggle="collapse"> <i
+                            class="icon-light-bulb"></i>Devextreme </a>
+                <ul id="devextremeDropdown" class="collapse list-unstyled">
+                    <li><a href="{{ url('/dev-grid') }}">Grid Custom DataSourse</a></li>
+                    <li><a href="{{ url('/components-calendar') }}">Calendar</a></li>
+                    <li ><a href="{{ url('/components-gallery') }}">Gallery</a></li>
+                    <li><a href="{{ url('/components-notifications') }}">Notifications</a></li>
+                    <li><a href="{{ url('/components-loading-buttons') }}">Loading buttons</a></li>
+                    <li><a href="{{ url('/components-preloader') }}">Preloaders</a></li>
+                </ul>
+            </li>
             <li><a href="{{ url('/dashboard')}}"> <i class="icon-logout"></i>Login page </a></li>
         </ul>
         <span class="heading">Extras</span>

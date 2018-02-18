@@ -12,4 +12,14 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css');
+
+// styles devexetreme собираем все стили в один
+mix.styles(['node_modules/devextreme/dist/css/dx.dark.css',
+    'node_modules/devextreme/dist/css/dx.spa.css',
+    'node_modules/devextreme/dist/css/dx.common.css'], 'public/devextreme/css/style.css');
+
+// scripts devexetreme собираем все стили в один
+mix.scripts(['node_modules/jquery/dist/jquery.min.js',
+
+    'node_modules/devextreme/dist/js/dx.all.js'], 'public/devextreme/js/devall.js');

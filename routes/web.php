@@ -79,6 +79,6 @@ Route::get('components-notifications',function (){
 Route::get('components-loading-buttons',function (){
     return view('layouts.components-loading-buttons', ['name' => 'basked.pro']);
 });
-Route::get('components-preloader',function (){
-    return view('layouts.components-preloader', ['name' => 'basked.pro']);
+Route::get('dev-grid',function (){
+    return view('layouts.dev-grid', ['name' => 'basked.pro']);
 });

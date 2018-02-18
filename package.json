@@ -31,6 +31,7 @@
         "datatables.net-bs4": "^1.10.16",
         "datatables.net-responsive": "^2.2.1",
         "datatables.net-responsive-bs4": "^2.2.1",
+        "devextreme": "^17.2.5",
         "dropzone": "^5.3.0",
         "font-awesome": "^4.7.0",
         "fullcalendar": "^3.8.2",
