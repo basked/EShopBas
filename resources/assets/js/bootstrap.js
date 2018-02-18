@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
@@ -12,13 +11,14 @@ try {
     window.$ = window.jQuery = require('jquery');
     // для графиков
     window.Chart = require('chart.js/dist/Chart.js');
-    window.TypeaHead =require('bootstrap-3-typeahead/bootstrap3-typeahead.min');
-     // слайдер обзываем noUiSlider для коректной работы form-adwansed.js
-    window.noUiSlider= require('nouislider/distribute/nouislider.min');
-    window.select=require('bootstrap-select/dist/js/bootstrap-select.min');
-        require('bootstrap');
-    // для админки dark-admin
+    window.TypeaHead = require('bootstrap-3-typeahead/bootstrap3-typeahead.min');
+    // слайдер обзываем noUiSlider для коректной работы form-adwansed.js
+    window.noUiSlider = require('nouislider/distribute/nouislider.min');
+    window.select = require('bootstrap-select/dist/js/bootstrap-select.min');
 
+    require('bootstrap');
+
+    // window.moment= require('moment/min/moment.min');
     require('messenger-hubspot/build/js/messenger.min.js');
     require('jquery.cookie/jquery.cookie.js');
     // для админки dark-admin работа с таблицами // нкжно придумаьб как загружыть только для datatables
@@ -42,10 +42,26 @@ try {
     // summernote
     require('summernote/dist/summernote-bs4.min');
     // dropezone
-    window.Dropzone=require('dropzone/dist/dropzone');
+    window.Dropzone = require('dropzone/dist/dropzone');
 
 
-} catch (e) {}
+    // Calendar
+
+    require('fullcalendar/dist/fullcalendar.min.js');
+    require('fullcalendar/dist/gcal.min.js');
+
+    // Galary
+    require('lightbox2/dist/js/lightbox.min');
+
+    // notyfications
+    require('messenger-hubspot/build/js/messenger.min.js');
+
+    // button loaders
+    require('ladda/dist/spin.min.js');
+    window.Ladda =require('ladda/dist/ladda.min.js');
+
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -76,7 +92,6 @@ if (token) {
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
-
 
 
 // import Echo from 'laravel-echo'

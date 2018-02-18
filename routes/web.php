@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.dashboard');
 });
 
 Auth::routes();
@@ -44,7 +44,7 @@ Route::get('charts-gauge',function (){
 Route::get('forms',function (){
    return view('layouts.forms', ['name' => 'basked.pro']);
 });
-
+// forms
 Route::get('forms-advanced',function (){
     return view('layouts.forms-advanced', ['name' => 'basked.pro']);
 });
@@ -58,4 +58,27 @@ Route::get('forms-texteditor',function (){
 });
 Route::get('forms-dropzone',function (){
     return view('layouts.forms-dropzone', ['name' => 'basked.pro']);
+});
+// components
+Route::get('components-cards',function (){
+    return view('layouts.components-cards', ['name' => 'basked.pro']);
+});
+
+Route::get('components-calendar',function (){
+    return view('layouts.components-calendar', ['name' => 'basked.pro']);
+});
+
+Route::get('components-gallery',function (){
+    return view('layouts.components-gallery', ['name' => 'basked.pro']);
+});
+
+Route::get('components-notifications',function (){
+    return view('layouts.components-notifications', ['name' => 'basked.pro']);
+});
+
+Route::get('components-loading-buttons',function (){
+    return view('layouts.components-loading-buttons', ['name' => 'basked.pro']);
+});
+Route::get('components-preloader',function (){
+    return view('layouts.components-preloader', ['name' => 'basked.pro']);
 });
