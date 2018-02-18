@@ -9,6 +9,9 @@
     <link href="{{ asset('css/dark-admin/css/font.css') }}" rel="stylesheet">
     <link href="{{ asset('devextreme/css/style.css') }}" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    <script src="{{ asset('devextreme/js/grid.js') }}"> </script>
+    <script src="{{ asset('devextreme/js/devall.js') }}"></script>
+
 
     <style type="text/css">/* Chart.js */
         @-webkit-keyframes chartjs-render-animation {
@@ -138,9 +141,7 @@
             </div>
         </section><Adminfooter id="admfooter"></Adminfooter>
         @section('js')
-            <script src="https://unpkg.com/devextreme-aspnet-data@1.3.0"></script>
-            <script src="{{ asset('devextreme/js/grid.js') }}"> </script>
-            <script src="{{ asset('devextreme/js/devall.js') }}"></script>
+
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
         @endsection
     </div>
