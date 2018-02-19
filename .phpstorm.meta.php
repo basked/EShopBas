@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-02-15 15:22:13.
+    * Generated on 2018-02-19 10:03:45.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -40,6 +40,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -172,6 +174,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -304,6 +308,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -436,6 +442,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -568,6 +576,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -700,6 +710,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -832,6 +844,8 @@ namespace PHPSTORM_META {
         'view.finder' => \Illuminate\View\FileViewFinder::class,
         'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
+        'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,

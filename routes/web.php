@@ -76,9 +76,30 @@ Route::get('components-notifications',function (){
     return view('layouts.components-notifications', ['name' => 'basked.pro']);
 });
 
+Route::get('components-preloader',function (){
+    return view('layouts.components-preloader', ['name' => 'basked.pro']);
+});
 Route::get('components-loading-buttons',function (){
     return view('layouts.components-loading-buttons', ['name' => 'basked.pro']);
 });
+
 Route::get('dev-grid',function (){
     return view('layouts.dev-grid', ['name' => 'basked.pro']);
 });
+
+Route::get('template',function (){
+  return view('layouts.template');
+});
+
+Route::get('template1',function (){
+    return view('layouts.template');
+});
+Route::get('template2',function (){
+    return view('layouts.template');
+});
+Route::get('template3',function (){
+    return view('layouts.template');
+});
+Route::get('bank','BankController@getGuzzleBank');
+
+
