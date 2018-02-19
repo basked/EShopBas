@@ -100,6 +100,7 @@ Route::get('template2',function (){
 Route::get('template3',function (){
     return view('layouts.template');
 });
-Route::get('bank','BankController@getGuzzleBank');
+Route::get('banks','BankController@getGuzzleBanks');
+Route::get('bank-officces','BankController@getGuzzleBanksDetail');
 
 

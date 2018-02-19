@@ -17,7 +17,8 @@ class CreateBanksTable extends Migration
             $table->increments('id');
             $table->string('name',64)->nullable();
             $table->string('name_short',32)->nullable();
-            $table->string('link',64)->comment('link to bank24.by');
+            $table->string('link',64)->comment('link to banki24.by');
+            $table->unsignedInteger('bank_site_id')->unique()->comment('id bank on site banki24.by');
             $table->string('site',64)->unique();
             $table->smallInteger('status');
             $table->timestamps();
