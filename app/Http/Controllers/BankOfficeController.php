@@ -11,7 +11,7 @@ class BankOfficeController extends Controller
    }
 
     public function bankOfficesParse(){
-        dd(BankOffice::bankOfficesParse());
+       dd(BankOffice::bankOfficesParse());
     }
 
 }

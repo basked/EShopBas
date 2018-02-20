@@ -19,7 +19,7 @@ class CreateBankOfficesTable extends Migration
             $table->string('name');
             $table->string('name_full');
             $table->string('address');
-            $table->string('link');
+            $table->unsignedInteger('office_site_id');
             $table->double('gps_x')->nullable();
             $table->double('gps_y')->nullable();;
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');

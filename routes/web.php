@@ -1,5 +1,5 @@
 <?php
-
+use App\BankOffice;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,6 +106,17 @@ Route::get('banks_parse', 'BankController@banksParse');
 Route::get('bank_offices', 'BankOfficeController@bankOffices');
 Route::get('bank_offices_parse', 'BankOfficeController@bankOfficesParse');
 
-Route::get('bank-atms', 'BankAtmsController@getGuzzleBankOffices');
+Route::get('bank_atms', 'BankAtmController@bankAtms');
+Route::get('bank_atms_parse', 'BankAtmController@bankAtmsParse');
+
+Route::get('bank_kurses', 'BankKursController@bankKurses');
+Route::get('bank_kurses_parse', 'BankKursController@bankKursesParse');
 
 
+
+Route::get('test', function (){
+
+$id = BankOffice::where('office_site_id','=',1880)->value('id');
+echo $id;
+
+});

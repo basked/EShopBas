@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBankAtmsTable extends Migration
+class CreateBankKursTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,19 @@ class CreateBankAtmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bank_atms', function (Blueprint $table) {
+        Schema::create('bank_kurs', function (Blueprint $table) {
             $table->increments('id');
+            $table->
+            $table->double('pokupka',5)->nullable();
+            $table->double('prodaja',5)->nullable();
             $table->unsignedInteger('bank_id');
-            $table->string('name');
-            $table->string('name_full');
-            $table->string('address');
-            $table->unsignedInteger('atm_site_id');
-            $table->json('currencies');
-            $table->string('work_time')->nullable();
-            $table->double('gps_x')->nullable();
-            $table->double('gps_y')->nullable();
+            $table->unsignedInteger('bank_offices_id');
+            $table->enum('currencies',['usd','eur','rub','pln','uah']);
+            $table->timestamps();
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            $table->foreign('bank_offices_id')->references('id')->on('bank_offices')->onDelete('cascade');
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -36,6 +34,6 @@ class CreateBankAtmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bank_atms');
+        Schema::dropIfExists('bank_kurs');
     }
 }
