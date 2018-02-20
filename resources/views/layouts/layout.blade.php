@@ -15,7 +15,7 @@
     <link href="{{ asset('css/style.default.premium.css') }}" rel="stylesheet" id="theme-stylesheet">
     <link id="new-stylesheet" rel="stylesheet" href="{{ asset('css/style.default.premium.css') }}">
     <link href="{{ asset('css/dark-admin/css/custom.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('css/dark-admin/img/favicon.ico') }}">
     <style type="text/css">/* Chart.js */
         @-webkit-keyframes chartjs-render-animation {
             from {
