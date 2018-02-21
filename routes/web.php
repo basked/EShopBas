@@ -103,9 +103,9 @@ Route::get('template3', function () {
 });
 
 
-Route::get('banks', 'BankController@Banks');
+Route::get('banks', 'BankController@banks');
 Route::get('banks_parse', 'BankController@banksParse');
-Route::get('banks_k', 'BankController@banksKurses');
+Route::get('banks_kurs/{bankId}', 'BankController@banksKurses');
 
 
 

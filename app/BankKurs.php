@@ -132,5 +132,4 @@ class BankKurs extends Model
         where('currencies', $currency)
             ->update(['status' => 0]);
     }
-
 }

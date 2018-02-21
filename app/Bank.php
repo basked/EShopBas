@@ -31,13 +31,13 @@ use Exception;
 class Bank extends Model
 {
 
-    public static function bankParse ()
+    public static function bankParse()
     {
         $banks = self::getDataFromSite();
         self::setDataFromSite($banks);
     }
 
-    public static function getDataFromSite ()
+    public static function getDataFromSite()
     {
         $client = new Client([
             'base_uri' => 'https://banki24.by/',
@@ -52,7 +52,7 @@ class Bank extends Model
      * @param bool $isActive
      * @return array
      */
-    private static function getProxy ($isActive = false)
+    private static function getProxy($isActive = false)
     {
         $proxy = [];
         if ($isActive == true) {
@@ -69,7 +69,7 @@ class Bank extends Model
     /**
      * @param array $banks
      */
-    public static function setDataFromSite ($banks = [])
+    public static function setDataFromSite($banks = [])
     {
         if (sizeof($banks) != 0) {
             try {
@@ -94,7 +94,7 @@ class Bank extends Model
      * @param $uri
      * @return bool|string
      */
-    private static function getBankId ($uri)
+    private static function getBankId($uri)
     {
         $client = new Client([
             'base_uri' => 'https://banki24.by',
@@ -110,14 +110,17 @@ class Bank extends Model
     }
 
     // находим все курсы
-    public static function getBankKurses ()
+    public static function getBankKurses($bankId = 0)
     {
-        $kurses = Bank::find(20)->kurses()->where('status', '=', '1')->get(['pokupka', 'prodaja', 'currencies']);
-        return $kurses;
+        return Bank::findOrFail($bankId)->kurses()->
+        where('status', '=', '1')->
+        orderBy('bank_offices_id', 'desc')->
+        orderBy('currencies')->
+        get(['bank_id', 'bank_offices_id', 'pokupka', 'prodaja', 'currencies']);
     }
 
     // взять все курсы
-    public function kurses ()
+    public function kurses()
     {
         return $this->hasMany('App\BankKurs');
     }
