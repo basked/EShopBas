@@ -110,7 +110,6 @@ class Bank extends Model
     }
 
     // находим все курсы
-
     public static function getBankKurses ()
     {
         $kurses = Bank::find(20)->kurses()->where('status', '=', '1')->get(['pokupka', 'prodaja', 'currencies']);
@@ -118,7 +117,6 @@ class Bank extends Model
     }
 
     // взять все курсы
-
     public function kurses ()
     {
         return $this->hasMany('App\BankKurs');
