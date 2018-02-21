@@ -37,10 +37,26 @@ class BankAtm extends Model
     public $timestamps = false;
 
     /**
+     * @param $bank_site_id
+     * @return mixed
+     */
+    public static function getDataFromSite ($bank_site_id)
+    {
+        $client = new Client([
+            'base_uri' => 'https://banki24.by/',
+            'timeout' => 120.0
+        ]);
+
+        $request = $client->request('GET', 'atms/list/' . $bank_site_id, self::getProxy());
+        $bank_atms = json_decode($request->getBody()->getContents());
+        return $bank_atms;
+    }
+
+    /**
      * @param bool $isActive
      * @return array
      */
-    private static function getProxy($isActive = false)
+    private static function getProxy ($isActive = false)
     {
         $proxy = [];
         if ($isActive == true) {
@@ -55,25 +71,18 @@ class BankAtm extends Model
     }
 
     /**
-     * @param $bank_site_id
-     * @return mixed
+     *
      */
-    public static function getDataFromSite($bank_site_id)
+    public static function bankAtmsParse ()
     {
-        $client = new Client([
-            'base_uri' => 'https://banki24.by/',
-            'timeout' => 120.0
-        ]);
-
-        $request = $client->request('GET', 'atms/list/' . $bank_site_id, self::getProxy());
-        $bank_atms = json_decode($request->getBody()->getContents());
-        return $bank_atms;
+        $bankAtms = self::getDataFromSiteAll();
+        self::setDataFromSite($bankAtms);
     }
 
     /**
      * @return array
      */
-    public static function getDataFromSiteAll()
+    public static function getDataFromSiteAll ()
     {
         $bank_atms = [];
         $client = new Client([
@@ -94,7 +103,7 @@ class BankAtm extends Model
     /**
      * @param $bankOffices
      */
-    public static function setDataFromSite($bankAtms)
+    public static function setDataFromSite ($bankAtms)
     {
         try {
             for ($i = 0; $i < count($bankAtms['atm_info']); $i++) {
@@ -126,14 +135,5 @@ class BankAtm extends Model
         (Exception $e) {
             echo 'Ошибки при записи данных в таблицу : ' . BankAtm::table, $e->getMessage(), "\n";
         }
-    }
-
-    /**
-     *
-     */
-    public static function bankAtmsParse()
-    {
-        $bankAtms = self::getDataFromSiteAll();
-        self::setDataFromSite($bankAtms);
     }
 }

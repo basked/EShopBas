@@ -36,50 +36,16 @@ class BankOffice extends Model
     /**
      *
      */
-    public static function bankOfficesParse()
+    public static function bankOfficesParse ()
     {
         $bankOffices = self::getDataFromSiteAll();
         self::setDataFromSite($bankOffices);
     }
 
     /**
-     * @param $bank_site_id
-     * @return mixed
-     */
-    public static function getDataFromSite($bank_site_id)
-    {
-        $client = new Client([
-            'base_uri' => 'https://banki24.by/',
-            'timeout' => 120.0
-        ]);
-
-        $request = $client->request('GET', 'offices/list/' . $bank_site_id, self::getProxy());
-        $bank_offices = json_decode($request->getBody()->getContents());
-        return $bank_offices;
-    }
-
-    /**
-     * @param bool $isActive
      * @return array
      */
-    private static function getProxy($isActive = false)
-    {
-        $proxy = [];
-        if ($isActive == true) {
-            $proxy = [
-                'proxy' => [
-                    'http' => 'http://gt-asup6:teksab@172.16.15.33:3128',
-                    'https' => 'http://gt-asup6:teksab@172.16.15.33:3128'
-                ]
-            ];
-        }
-        return $proxy;
-    }
-
-    /**
-     * @return array
-     */
-    public static function getDataFromSiteAll()
+    public static function getDataFromSiteAll ()
     {
 
         $bank_offices = [];
@@ -99,32 +65,64 @@ class BankOffice extends Model
     }
 
     /**
+     * @param bool $isActive
+     * @return array
+     */
+    private static function getProxy ($isActive = false)
+    {
+        $proxy = [];
+        if ($isActive == true) {
+            $proxy = [
+                'proxy' => [
+                    'http' => 'http://gt-asup6:teksab@172.16.15.33:3128',
+                    'https' => 'http://gt-asup6:teksab@172.16.15.33:3128'
+                ]
+            ];
+        }
+        return $proxy;
+    }
+
+    /**
      * @param $bankOffices
      */
-    public static function setDataFromSite($bankOffices)
+    public static function setDataFromSite ($bankOffices)
     {
         try {
-                for ($i = 0; $i < count($bankOffices['office_info']); $i++) {
-                    foreach ($bankOffices['office_info'][$i] as $office_info) {
-                        $bankOffice = new BankOffice();
-                        $bankOffice->bank_id = $bankOffices['bank_id'][$i];
-                        $bankOffice->name = strip_tags($office_info[0]);
-                        $bankOffice->address = $office_info[1];
-                        $crawler = new Crawler($office_info[0]);
-                        $crawler2 = new Crawler($office_info[2]);
-                        $bankOffice->office_site_id = explode('/', $crawler->filter('a')->attr('href'))[4];
-                        $bankOffice->name_full = $crawler2->filter('a')->attr('data-name');
-                        $bankOffice->gps_x = $crawler2->filter('a')->attr('data-x');
-                        $bankOffice->gps_y = $crawler2->filter('a')->attr('data-y');
-                        $bankOffice->save();
-                        unset($crawler);
-                        unset($crawler2);
-                    }
+            for ($i = 0; $i < count($bankOffices['office_info']); $i++) {
+                foreach ($bankOffices['office_info'][$i] as $office_info) {
+                    $bankOffice = new BankOffice();
+                    $bankOffice->bank_id = $bankOffices['bank_id'][$i];
+                    $bankOffice->name = strip_tags($office_info[0]);
+                    $bankOffice->address = $office_info[1];
+                    $crawler = new Crawler($office_info[0]);
+                    $crawler2 = new Crawler($office_info[2]);
+                    $bankOffice->office_site_id = explode('/', $crawler->filter('a')->attr('href'))[4];
+                    $bankOffice->name_full = $crawler2->filter('a')->attr('data-name');
+                    $bankOffice->gps_x = $crawler2->filter('a')->attr('data-x');
+                    $bankOffice->gps_y = $crawler2->filter('a')->attr('data-y');
+                    $bankOffice->save();
+                    unset($crawler);
+                    unset($crawler2);
                 }
-            } catch
-            (Exception $e) {
-                echo 'Ошибки при записи данных в таблицу : ' . BankOffice::table, $e->getMessage(), "\n";
             }
+        } catch
+        (Exception $e) {
+            echo 'Ошибки при записи данных в таблицу : ' . BankOffice::table, $e->getMessage(), "\n";
         }
+    }
 
+    /**
+     * @param $bank_site_id
+     * @return mixed
+     */
+    public static function getDataFromSite ($bank_site_id)
+    {
+        $client = new Client([
+            'base_uri' => 'https://banki24.by/',
+            'timeout' => 120.0
+        ]);
+        $request = $client->request('GET', 'offices/list/' . $bank_site_id, self::getProxy());
+        $bank_offices = json_decode($request->getBody()->getContents());
+        return $bank_offices;
+    }
 }

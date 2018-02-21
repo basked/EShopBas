@@ -16,11 +16,24 @@ use App\Bank;
 class BankController extends Controller
 {
 
-  public function banks(){
-     dd(Bank::getDataFromSite());
-  }
+    public function banks ()
+    {
+        dd(Bank::getDataFromSite());
+    }
 
-  public function banksParse(){
-     dd(Bank::BankParse());
-  }
+    public function banksParse ()
+    {
+        dd(Bank::BankParse());
+    }
+
+    public function banksKurses ()
+    {
+        $bankKurses =Bank::getBankKurses();
+
+        return view('banks.bank',['bankKurses'=>$bankKurses],['name'=>'Курсы банка']);
+        /*  foreach ($bankKurses as $bankKurs){
+             echo 'Pokupka='.$bankKurs->pokupka.'; Prodaja='.$bankKurs->prodaja.'<br>';
+          }
+        */
+    }
 }

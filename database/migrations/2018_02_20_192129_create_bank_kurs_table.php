@@ -15,12 +15,12 @@ class CreateBankKursTable extends Migration
     {
         Schema::create('bank_kurs', function (Blueprint $table) {
             $table->increments('id');
-            $table->
             $table->double('pokupka',5)->nullable();
             $table->double('prodaja',5)->nullable();
             $table->unsignedInteger('bank_id');
             $table->unsignedInteger('bank_offices_id');
             $table->enum('currencies',['usd','eur','rub','pln','uah']);
+            $table->unsignedSmallInteger('status');
             $table->timestamps();
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
             $table->foreign('bank_offices_id')->references('id')->on('bank_offices')->onDelete('cascade');

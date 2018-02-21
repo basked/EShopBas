@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use Exception;
+
 /**
  * App\Bank
  *
@@ -70,7 +71,7 @@ class Bank extends Model
      */
     public static function setDataFromSite ($banks = [])
     {
-        if (sizeof($banks)!=0) {
+        if (sizeof($banks) != 0) {
             try {
                 for ($i = 0; $i < count($banks->aaData); $i++) {
                     $bank = new Bank();
@@ -80,7 +81,7 @@ class Bank extends Model
                     $bank->link = $crawler->filter('a')->attr('href');
                     $bank->bank_site_id = self::getBankId($bank->link);
                     $bank->site = strip_tags($banks->aaData[$i][1]);
-                    $bank->status = 1;
+                    $bank->status = 1; // активный
                     $bank->save();
                 }
             } catch (Exception $e) {
@@ -107,4 +108,20 @@ class Bank extends Model
         return $bankId;
 
     }
+
+    // находим все курсы
+
+    public static function getBankKurses ()
+    {
+        $kurses = Bank::find(20)->kurses()->where('status', '=', '1')->get(['pokupka', 'prodaja', 'currencies']);
+        return $kurses;
+    }
+
+    // взять все курсы
+
+    public function kurses ()
+    {
+        return $this->hasMany('App\BankKurs');
+    }
+
 }

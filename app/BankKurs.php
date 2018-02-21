@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Beta\B;
 use Illuminate\Database\Eloquent\Model;
 use App\Bank;
 use App\BankOffice;
@@ -11,11 +12,22 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class BankKurs extends Model
 {
+    public static function getDataFromSite ($bank_site_id, $currencies)
+    {
+        $client = new Client([
+            'base_uri' => 'https://banki24.by/',
+            'timeout' => 120.0
+        ]);
+        $request = $client->request('GET', 'kurs/list_one/' . $bank_site_id . '?code=' . $currencies, self::getProxy());
+        $bank_kurses = json_decode($request->getBody()->getContents());
+        return $bank_kurses;
+    }
+
     /**
      * @param bool $isActive
      * @return array
      */
-    private static function getProxy($isActive = false)
+    private static function getProxy ($isActive = false)
     {
         $proxy = [];
         if ($isActive == true) {
@@ -29,19 +41,13 @@ class BankKurs extends Model
         return $proxy;
     }
 
-
-    public static function getDataFromSite($bank_site_id, $currencies)
+    public static function bankKursesParse ()
     {
-        $client = new Client([
-            'base_uri' => 'https://banki24.by/',
-            'timeout' => 120.0
-        ]);
-        $request = $client->request('GET', 'kurs/list_one/' . $bank_site_id . '?code=' . $currencies, self::getProxy());
-        $bank_kurses = json_decode($request->getBody()->getContents());
-        return $bank_kurses;
+        $bankKurses = self::getDataFromSiteAll();
+        self::setDataFromSite($bankKurses);
     }
 
-    public static function getDataFromSiteAll()
+    public static function getDataFromSiteAll ()
     {
         $currencies = ['usd', 'eur', 'rub', 'pln', 'uah'];
         $bank_kurses = [];
@@ -63,27 +69,26 @@ class BankKurs extends Model
         return $bank_kurses;
     }
 
-
-    public static function setDataFromSite($bankKurses)
+    public static function setDataFromSite ($bankKurses)
     {
         try {
+            self::setInactiveKurs();
             for ($i = 0; $i < count($bankKurses['kurs_info']); $i++) {
+
                 foreach ($bankKurses['kurs_info'][$i] as $kurs_info) {
                     if (!empty($kurs_info)) {
                         $bankKurs = new BankKurs();
-
-                        // $bankKurs->pokupka = str_replace(',', '.', $kurs_info[1]);
-
-                        if (!empty(str_replace(',', '.', $kurs_info[1]))*1) {
+                        if (!empty(str_replace(',', '.', $kurs_info[1])) * 1) {
                             $bankKurs->pokupka = (float)str_replace(',', '.', $kurs_info[1]);
                         };
-                        if (!empty(str_replace(',', '.', $kurs_info[2]))*1) {
+                        if (!empty(str_replace(',', '.', $kurs_info[2])) * 1) {
                             $bankKurs->prodaja = (float)str_replace(',', '.', $kurs_info[2]);
                         };
-
                         $bankKurs->bank_id = $bankKurses['bank_id'][$i];
                         $bankKurs->bank_offices_id = self::getOfficesId($kurs_info[0]);
                         $bankKurs->currencies = $bankKurses['bank_currency'][$i];
+                        $bankKurs->status = 1; // сделть активным
+                        //  self::setInactiveKurs($bankKurs->bank_id, $bankKurs->bank_offices_id, $bankKurs->currencies);
                         $bankKurs->save();
                     }
                 }
@@ -94,14 +99,13 @@ class BankKurs extends Model
         }
     }
 
-    public static function bankKursesParse()
+    private static function setInactiveKurs ()
     {
-        $bankKurses = self::getDataFromSiteAll();
-        self::setDataFromSite($bankKurses);
+        BankKurs::where('status', 1)
+            ->update(['status' => 0]);
     }
 
-
-    private static function getOfficesId($offices)
+    private static function getOfficesId ($offices)
     {
         $crawler = new Crawler($offices);
         $office_site_id = explode('/', $crawler->filter('a')->eq(2)->attr('href'))[4];
@@ -109,5 +113,24 @@ class BankKurs extends Model
         return $office_id;
     }
 
+    private static function setInactiveKursBank ($bank_id)
+    {
+        BankKurs::where('bank_id', $bank_id)
+            ->update(['status' => 0]);
+    }
+
+    /**
+     *  Делаем неактивным текущий курс валют
+     * @param $bank_id
+     * @param $bank_office_id
+     * @param $currency
+     */
+    private static function setInactiveKursOffice ($bank_id, $bank_office_id, $currency)
+    {
+        BankKurs::where('bank_offices_id', $bank_office_id)->
+        where('bank_id', $bank_id)->
+        where('currencies', $currency)
+            ->update(['status' => 0]);
+    }
 
 }
