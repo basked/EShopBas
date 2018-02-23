@@ -103,6 +103,11 @@ Route::get('template3', function () {
 });
 
 
+/*DevExtreme*/
+Route::get('dev','DevController@DevData');
+
+/*End DevExtreme*/
+
 Route::get('banks', 'BankController@banks');
 Route::get('banks_parse', 'BankController@banksParse');
 Route::get('banks_kurs/{bankId}', 'BankController@banksKurses');

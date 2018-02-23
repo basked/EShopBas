@@ -30,6 +30,7 @@ use Exception;
  */
 class Bank extends Model
 {
+    protected $visible = ['name','site','created_at'];
 
     public static function bankParse()
     {

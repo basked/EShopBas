@@ -46,7 +46,7 @@
 
 
 </head>
-<body >
+<body class="dx-viewport">
 <header class="header">
 <!-- Megamenu-->
     @include('layouts.nav-mega')
@@ -61,7 +61,7 @@
 <!--Vue Component <Admindashboard id="admin-dashboard"></Admindashboard>-->
     <!--Dashboard End-->
 
-    <Adminfooter id="admfooter"></Adminfooter>
+    {{--<Adminfooter id="admfooter"></Adminfooter>--}}
 </div>
 <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button"
         class="btn btn-primary btn-sm d-none d-md-inline-block"><i class="fa fa-cog fa-2x"></i></button>
