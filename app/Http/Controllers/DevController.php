@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use App\Bank;
 class DevController extends Controller
 {
-    public function DevData(){
-      return Bank::all();
+    public function devGridData(){
+//        return Bank::find([2,5,11])->toJson();
+        return Bank::all()->toJson();
+    }
+
+    public function devGrid(){
+      return  view('devextreme.grid');
     }
 }

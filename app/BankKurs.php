@@ -12,6 +12,9 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class BankKurs extends Model
 {
+
+    protected $visible=['pokupka','prodaja','currencies','created_at'];
+
     public static function getDataFromSite ($bank_site_id, $currencies)
     {
         $client = new Client([
@@ -132,4 +135,12 @@ class BankKurs extends Model
         where('currencies', $currency)
             ->update(['status' => 0]);
     }
+
+
+    // связь с банками
+    public function banks()
+    {
+        return $this->belongsTo('App\Bank');
+    }
+
 }

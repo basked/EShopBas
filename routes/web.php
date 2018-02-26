@@ -104,14 +104,14 @@ Route::get('template3', function () {
 
 
 /*DevExtreme*/
-Route::get('dev','DevController@DevData');
-
+//Route::get('dev-grid', 'DevController@DevData');
+Route::get('dev-grid-data', 'DevController@devGridData');
+Route::get('dev-grid', 'DevController@devGrid');
 /*End DevExtreme*/
 
 Route::get('banks', 'BankController@banks');
 Route::get('banks_parse', 'BankController@banksParse');
 Route::get('banks_kurs/{bankId}', 'BankController@banksKurses');
-
 
 
 Route::get('bank_offices', 'BankOfficeController@bankOffices');
@@ -124,13 +124,11 @@ Route::get('bank_kurses', 'BankKursController@bankKurses');
 Route::get('bank_kurses_parse', 'BankKursController@bankKursesParse');
 
 
-
-
-
+// test Route
 Route::get('test', function () {
-    /*
-    // значение
-    $id = BankOffice::where('office_site_id', '=', 1880)->value('id');
-    echo $id;*/
+    //$banks=[];
+    $banks= \App\Bank::find([11,15])->toArray();
+    dd($banks);
 
 });
+// End test Route

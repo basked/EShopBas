@@ -30,7 +30,30 @@ use Exception;
  */
 class Bank extends Model
 {
-    protected $visible = ['name','site','created_at'];
+    // для выгрузки в Json
+    protected $with = ['offices'];
+    // поля видны для Json
+    protected $visible = ['name','site','created_at','link','offices'];
+
+    // Связь с отделениями для банка
+    public function offices()
+    {
+        return $this->hasMany('App\BankOffice');
+    }
+
+    // Связь с курсами для банк
+    public function atms()
+    {
+        return $this->hasMany('App\BankAtm');
+    }
+    // Связь с курсами для банка
+    public function kurses()
+    {
+        return $this->hasMany('App\BankKurs')->where('status','=','1')->orderBy('bank_offices_id');
+    }
+
+
+
 
     public static function bankParse()
     {
@@ -120,10 +143,7 @@ class Bank extends Model
         get(['bank_id', 'bank_offices_id', 'pokupka', 'prodaja', 'currencies']);
     }
 
-    // взять все курсы
-    public function kurses()
-    {
-        return $this->hasMany('App\BankKurs');
-    }
+
+
 
 }

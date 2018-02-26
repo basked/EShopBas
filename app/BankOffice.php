@@ -30,7 +30,23 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 class BankOffice extends Model
 {
+    // не использовать временные метки
     public $timestamps = false;
+    // поля видны для Json
+    protected $visible = ['id','name','bank_id','address','gps_x','gps_y','kurses'];
+   // Связь со связанными таблицами
+    protected $with = ['banks','kurses'];
+
+    public function banks()
+    {
+        return $this->belongsTo('App\Bank');
+    }
+
+    // Связь с курсами для банка
+    public function kurses()
+    {
+        return $this->hasMany('App\BankKurs','bank_offices_id','id')->where('status','=','1')->orderBy('bank_offices_id');
+    }
 
 
     /**

@@ -12,8 +12,8 @@
     <link href="{{ asset('css/dark-admin/css/font.css') }}" rel="stylesheet">
     <!-- Google fonts - Muli-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
-    <link href="{{ asset('css/style.default.premium.css') }}" rel="stylesheet" id="theme-stylesheet">
-    <link id="new-stylesheet" rel="stylesheet" href="{{ asset('css/style.default.premium.css') }}">
+    <link href="{{ asset('css/style.blue.premium.css') }}" rel="stylesheet" id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet" href="{{ asset('css/style.blue.premium.css') }}">
     <link href="{{ asset('css/dark-admin/css/custom.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('css/dark-admin/img/favicon.ico') }}">
     <style type="text/css">/* Chart.js */
