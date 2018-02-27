@@ -33,8 +33,8 @@ class Bank extends Model
     // для выгрузки в Json
     protected $with = ['offices'];
     // поля видны для Json
-    protected $visible = ['name','site','created_at','link','offices'];
-
+    protected $visible = ['id','name','link','site'];//,'created_at','offices'];
+    protected $fillable=['id','name','link','site'];
     // Связь с отделениями для банка
     public function offices()
     {

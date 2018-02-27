@@ -52,7 +52,7 @@
             {{--<script src="{{ asset('devextreme/data/data1.js') }}"></script>--}}
             <script src="{{ asset('devextreme/js/devall.js') }}"></script>
             <script src="{{ asset('devextreme/js/gridData.js') }}"></script>
-            <script src="{{ asset('devextreme/js/gridMasterDetailData.js') }}"></script>
+            {{--<script src="{{ asset('devextreme/js/gridMasterDetailData.js') }}"></script>--}}
 
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
         @endsection

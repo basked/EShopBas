@@ -14,4 +14,5 @@ class DevController extends Controller
     public function devGrid(){
       return  view('devextreme.grid');
     }
+
 }
