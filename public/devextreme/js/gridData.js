@@ -1,24 +1,44 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 var gridDataSource = new DevExpress.data.DataSource({
 
     load: function (loadOptions) {
         return $.getJSON('api/banks');
     },
     insert: function (values) {
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         return $.ajax({
             url: "api/banks",
             method: "POST",
-            data: values
+            data: {
+                name: values.name,
+                link: values.link,
+                site: values.site
+            }
         })
     },
     remove: function (key) {
+        console.log('key:');
+        console.log(key.id);
         return $.ajax({
-            url: "dev-grid-data" + encodeURIComponent(key),
+            url: "api/banks/" + encodeURIComponent(key.id),
             method: "DELETE",
         });
     },
     update: function (key, values) {
         return $.ajax({
-            url: "dev-grid-data" + encodeURIComponent(key),
+            url: "api/banks" + encodeURIComponent(key),
             method: "PUT",
             data: values
         })
@@ -45,7 +65,7 @@ $(function () {
         //  dataSource: devData,
         dataSource: gridDataSource,
         keyExpr: "id",
-        columns: ["name", "site", "link", "created_at"],
+        columns: ["name", "site", "link"],
         selection: {
             mode: "single"
         },
@@ -80,11 +100,11 @@ $(function () {
         },
         onRowInserting: function (e) {
             console.log("RowInserting=");
-            console.log(e);
+            console.log(e.data);
         },
         onRowInserted: function (e) {
             console.log("RowInserted=");
-            console.log(e);
+            console.log(e.data);
         },
         onRowUpdating: function (e) {
             console.log("RowUpdating=");

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Resources\Json\JsonResource;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,15 +12,28 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Use App\Bank;
 
-Route::get('banks', function() {
+use App\Bank;
+
+Route::get('banks', function () {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
-    return Bank::get(['id','name','link','site']);
+    return Bank::get(['id', 'name', 'link', 'site']);
 });
-Route::post('banks', function(Request $request) {
-    return Bank::create($request->all());
+Route::post('banks', function (Request $request) {
+    $bank = new Bank();
+    $bank->name =$request->name;
+    $bank->link = 'banks/basked';
+    $bank->bank_site_id = rand(40,1000);
+    $bank->site = $request->site;
+    $bank->status = 1;
+    $bank->save();
+    return $bank;
+});
+
+Route::delete('banks/{id}', function ($id) {
+    $bank = Bank::findOrFail($id);
+    $bank->delete();
 });
 
 
