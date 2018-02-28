@@ -1,7 +1,7 @@
 @section('css')
     {{--<link rel="stylesheet" href="{{ asset('devextreme/css/devall.css') }}">--}}
     {{--<link rel="stylesheet" href="{{ asset('devextreme/css/style.css') }}">--}}
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.5/css/dx.spa.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.5/css/dx.common.css"/>
     <link rel="dx-theme" data-theme="generic.darkmoon"

@@ -1,79 +1,103 @@
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
+var statuses = [{'id': 0, name: 'Укажите значение'}, {'id': 1, name: 'Активный'}, {'id': 2, name: 'Не активнай'}];
 var gridDataSource = new DevExpress.data.DataSource({
-
+    // загрузка данных
     load: function (loadOptions) {
         return $.getJSON('api/banks');
     },
+    // добавление данных
     insert: function (values) {
-
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
         return $.ajax({
             url: "api/banks",
             method: "POST",
             data: {
                 name: values.name,
                 link: values.link,
-                site: values.site
+                site: values.site,
+                status_id: values.status_id
             }
         })
     },
+    // удаление даннх
     remove: function (key) {
-        console.log('key:');
-        console.log(key.id);
         return $.ajax({
             url: "api/banks/" + encodeURIComponent(key.id),
             method: "DELETE",
         });
     },
+    // обновление данных
     update: function (key, values) {
         return $.ajax({
-            url: "api/banks" + encodeURIComponent(key),
+            url: "api/banks/" + encodeURIComponent(key.id),
             method: "PUT",
-            data: values
+            data: {
+                name: values.name,
+                bank_site_id: values.bank_site_id,
+                link: values.link,
+                site: values.site,
+                status_id: values.status_id
+            }
         })
     }
 });
-
-// $(function() {
-//     $("#gridContainer").dxDataGrid({
-//         dataSource: gridDataSource,
-//         // ...
-//     });
-// });
 
 
 var devData = new DevExpress.data.DataSource("dev-grid-data");
 
 
 //var devMasterDetailData = new DevExpress.data.DataSource("dev-grid-data");
-var currentEmployee1Data;
+
 // передаём в грид
 $(function () {
     $("#gridContainer").dxDataGrid({
 
         //  dataSource: devData,
         dataSource: gridDataSource,
+        searchPanel: {visible: true},
         keyExpr: "id",
-        columns: ["name", "site", "link"],
+        columns: ["name", "site", "link", {
+
+            dataField: "created_at",
+            caption: "Created",
+            dataType: "date",
+            width: 125
+        },
+            {
+                dataField: 'status_id',
+                caption: 'Status',
+                lookup: {
+                    dataSource: statuses,
+                    displayExpr: "name",
+                    valueExpr: "id"
+                }
+            }],
         selection: {
             mode: "single"
         },
+        summary: {
+            totalItems: [{
+                column: "name",
+                summaryType: "count"
+            }]
+        },
         editing: {
-            mode: "row",
+            mode: "popup",
+            popup: {
+                title: "Bank Info",
+                showTitle: true,
+                width: 700,
+                height: 345,
+                position: {
+                    my: "top",
+                    at: "top",
+                    of: window
+                }
+            },
+            // mode: "row",
+            // mode: "form",
             allowUpdating: true,
             allowDeleting: true,
-            allowAdding: true
+            allowAdding: true,
+
         },
         "export": {
             enabled: true,
@@ -84,7 +108,7 @@ $(function () {
             visible: true
         },
         paging: {
-            pageSize: 10
+            pageSize: 30
         },
         onRowUpdated: function (e) {
             console.log("UpdateRow");
@@ -94,6 +118,11 @@ $(function () {
             console.log("StartEditRow");
             console.log(e);
         },
+        onRowUpdating: function (e) {
+            console.log("RowUpdating");
+            console.log(e);
+        },
+
         onInitNewRow: function (e) {
             console.log("InitNewRow=");
             console.log(e);
@@ -105,10 +134,6 @@ $(function () {
         onRowInserted: function (e) {
             console.log("RowInserted=");
             console.log(e.data);
-        },
-        onRowUpdating: function (e) {
-            console.log("RowUpdating=");
-            console.log(e);
         },
 
         onRowRemoving: function (e) {

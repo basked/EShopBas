@@ -31,10 +31,10 @@ use Exception;
 class Bank extends Model
 {
     // для выгрузки в Json
-    //protected $with = ['offices'];
+    protected $with = ['offices'];
     // поля видны для Json
-    protected $visible = ['id','name','link','site','bank_site_id','status'];//,'created_at','offices'];
-    protected $fillable=['id','name','link','site','bank_site_id','status'];
+    protected $visible = ['id','name','link','site','bank_site_id','status_id','created_at'];//,'created_at','offices'];
+    protected $fillable=['id','name','link','site','bank_site_id','status_id','created_at'];
     // Связь с отделениями для банка
     public function offices()
     {
@@ -49,7 +49,7 @@ class Bank extends Model
     // Связь с курсами для банка
     public function kurses()
     {
-        return $this->hasMany('App\BankKurs')->where('status','=','1')->orderBy('bank_offices_id');
+        return $this->hasMany('App\BankKurs')->where('status_id','=','1')->orderBy('bank_offices_id');
     }
 
 
@@ -105,7 +105,7 @@ class Bank extends Model
                     $bank->link = $crawler->filter('a')->attr('href');
                     $bank->bank_site_id = self::getBankId($bank->link);
                     $bank->site = strip_tags($banks->aaData[$i][1]);
-                    $bank->status = 1; // активный
+                    $bank->status_id = 1; // активный
                     $bank->save();
                 }
             } catch (Exception $e) {
@@ -137,7 +137,7 @@ class Bank extends Model
     public static function getBankKurses($bankId = 0)
     {
         return Bank::findOrFail($bankId)->kurses()->
-        where('status', '=', '1')->
+        where('status_id', '=', '1')->
         orderBy('bank_offices_id', 'desc')->
         orderBy('currencies')->
         get(['bank_id', 'bank_offices_id', 'pokupka', 'prodaja', 'currencies']);
