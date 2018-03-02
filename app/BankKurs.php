@@ -90,7 +90,7 @@ class BankKurs extends Model
                         $bankKurs->bank_id = $bankKurses['bank_id'][$i];
                         $bankKurs->bank_offices_id = self::getOfficesId($kurs_info[0]);
                         $bankKurs->currencies = $bankKurses['bank_currency'][$i];
-                        $bankKurs->status = 1; // сделть активным
+                        $bankKurs->status_id = 1; // сделть активным
                         //  self::setInactiveKurs($bankKurs->bank_id, $bankKurs->bank_offices_id, $bankKurs->currencies);
                         $bankKurs->save();
                     }
@@ -104,8 +104,8 @@ class BankKurs extends Model
 
     private static function setInactiveKurs ()
     {
-        BankKurs::where('status', 1)
-            ->update(['status' => 0]);
+        BankKurs::where('status_id', 1)
+            ->update(['status_id' => 0]);
     }
 
     private static function getOfficesId ($offices)
@@ -119,7 +119,7 @@ class BankKurs extends Model
     private static function setInactiveKursBank ($bank_id)
     {
         BankKurs::where('bank_id', $bank_id)
-            ->update(['status' => 0]);
+            ->update(['status_id' => 0]);
     }
 
     /**
@@ -133,7 +133,7 @@ class BankKurs extends Model
         BankKurs::where('bank_offices_id', $bank_office_id)->
         where('bank_id', $bank_id)->
         where('currencies', $currency)
-            ->update(['status' => 0]);
+            ->update(['status_id' => 0]);
     }
 
 

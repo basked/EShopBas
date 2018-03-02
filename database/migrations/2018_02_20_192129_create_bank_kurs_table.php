@@ -20,7 +20,7 @@ class CreateBankKursTable extends Migration
             $table->unsignedInteger('bank_id');
             $table->unsignedInteger('bank_offices_id');
             $table->enum('currencies',['usd','eur','rub','pln','uah']);
-            $table->unsignedSmallInteger('status');
+            $table->unsignedSmallInteger('status_id');
             $table->timestamps();
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
             $table->foreign('bank_offices_id')->references('id')->on('bank_offices')->onDelete('cascade');
@@ -29,7 +29,6 @@ class CreateBankKursTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()

@@ -45,7 +45,7 @@ class BankOffice extends Model
     // Связь с курсами для банка
     public function kurses()
     {
-        return $this->hasMany('App\BankKurs','bank_offices_id','id')->where('status','=','1')->orderBy('bank_offices_id');
+        return $this->hasMany('App\BankKurs','bank_offices_id','id')->where('status_id','=','1')->orderBy('bank_offices_id');
     }
 
 
