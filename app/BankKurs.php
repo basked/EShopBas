@@ -56,7 +56,7 @@ class BankKurs extends Model
         $bank_kurses = [];
         $client = new Client([
             'base_uri' => 'https://banki24.by/',
-            'timeout' => 120.0
+            'timeout' => 500.0
         ]);
         $banks = Bank::all();
         foreach ($currencies as $currency) {

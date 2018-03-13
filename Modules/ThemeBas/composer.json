@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/themebas",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\ThemeBas\\Providers\\ThemeBasServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\ThemeBas\\": ""
+        }
+    }
+}

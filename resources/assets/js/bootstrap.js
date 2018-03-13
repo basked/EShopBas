@@ -65,6 +65,10 @@ try {
     //END DEVEXTREME
 
 
+    // BEGIN MODULES
+    require('./../../../Modules/ThemeBas/Resources/assets/js/themebas_comp');
+    // END MODULES
+
 } catch (e) {
 }
 

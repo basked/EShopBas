@@ -13,7 +13,8 @@ use App\BankOffice;
 */
 
 Route::get('/', function () {
-    return view('layouts.dashboard');
+   //return view('layouts.dashboard');
+    return view('welcome');
 });
 
 Auth::routes();

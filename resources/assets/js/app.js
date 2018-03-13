@@ -12,11 +12,16 @@ let Admintable = require('./components/AdminTable.vue');
 
 let Admindashboard = require('./components/AdminDashboard.vue');
 
+//require('./../../../Modules/ThemeBas/Resources/assets/js/basthemes');
+/*bas
 const admfooter = new Vue({
     el: '#admfooter',
     components: {Adminfooter}
 });
-/*bas! пока закоментим
+
+
+
+! пока закоментим
 const admdashboard = new Vue({
     el: '#admdashboard',
     components: {Admindashboard}
