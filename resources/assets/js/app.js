@@ -9,10 +9,9 @@ window.Vue = require('vue');
 
 let Adminfooter = require('./components/AdminFooter.vue');
 let Admintable = require('./components/AdminTable.vue');
-
 let Admindashboard = require('./components/AdminDashboard.vue');
 
-//require('./../../../Modules/ThemeBas/Resources/assets/js/basthemes');
+//require('./../../../Modules/ThemeBas/Resources/assets/js/themebas_comp');
 /*bas
 const admfooter = new Vue({
     el: '#admfooter',
