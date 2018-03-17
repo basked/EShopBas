@@ -23,7 +23,8 @@
 </div>
 
 
-@yield('content')<script src="{{ Module::asset('ThemeBas:js/jquery-3.2.1.slim.min.js') }}"></script>
+@yield('content')
+<script src="{{ Module::asset('ThemeBas:js/jquery-3.2.1.slim.min.js') }}"></script>
 <script src="{{ Module::asset('ThemeBas:js/core.min.js') }}"></script>
 <script src="{{ Module::asset('ThemeBas:js/bootstrap.min.js')}}"></script>
 <script src="{{ Module::asset('ThemeBas:js/script.js') }}"></script>
