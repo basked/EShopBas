@@ -86,5 +86,11 @@ mix.copy('node_modules/devextreme/dist/css/dx.win10.white.css', 'Modules/Dev/Res
 //иконки
 mix.mix.copyDirectory('node_modules/devextreme/dist/css/icons', 'Modules/Dev/Resources/assets/css/icons');
 
-
 //КОНЕЦ для работы с модулем -=DEV=-
+//====================================
+//НАЧАЛО для работы с модулем -=BLOG=-
+
+
+
+// КОНЕЦ для работы с модулем -=BLOG=-
+//====================================

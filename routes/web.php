@@ -128,8 +128,7 @@ Route::get('bank_kurses_parse', 'BankKursController@bankKursesParse');
 // test Route
 Route::get('test', function () {
     //$banks=[];
-    $banks= \App\Bank::find([11,15])->toArray();
-    dd($banks);
+
 
 });
 // End test Route
