@@ -31,6 +31,8 @@ use Symfony\Component\DomCrawler\Crawler;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankAtm whereNameFull($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankAtm whereWorkTime($value)
  * @mixin \Eloquent
+ * @property int $atm_site_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankAtm whereAtmSiteId($value)
  */
 class BankAtm extends Model
 {

@@ -15,17 +15,21 @@ class BlogController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index(){
-        $post=Post::find(1);
-        $data['id']=$post->id;
-        $data['title']=$post->title;
-        $data['slug']=$post->slug;
-        $data['content']=$post->content;
-        $data['categoty']=$post->category->title;
+    public function index()
+    {
+        $post = Post::find(1);
+        $data = [
+            'id' => $post->id,
+            'title' => $post->title,
+            'slug' => $post->slug,
+            'content' => $post->content,
+            'categoty' => $post->category->title,
+            'categoty_slug' => $post->category->slug,
+            'tags' => $post->tags->toArray()
+        ];
 
-      return  dd($data);
-       // return BlogPost::all()->toJson();
-       // return view('blog::index');
+        return dd($data);
+
     }
 
     /**

@@ -27,6 +27,10 @@ use Symfony\Component\DomCrawler\Crawler;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankOffice whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankOffice whereNameFull($value)
  * @mixin \Eloquent
+ * @property int $office_site_id
+ * @property-read \App\Bank $banks
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\BankKurs[] $kurses
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankOffice whereOfficeSiteId($value)
  */
 class BankOffice extends Model
 {

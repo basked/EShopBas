@@ -27,6 +27,13 @@ use Exception;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Bank whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Bank whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $bank_site_id id bank on site banki24.by
+ * @property int $status_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\BankAtm[] $atms
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\BankKurs[] $kurses
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\BankOffice[] $offices
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Bank whereBankSiteId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Bank whereStatusId($value)
  */
 class Bank extends Model
 {

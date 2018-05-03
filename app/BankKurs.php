@@ -10,6 +10,30 @@ use App\BankOffice;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
+/**
+ * App\BankKurs
+ *
+ * @property int $id
+ * @property float|null $pokupka
+ * @property float|null $prodaja
+ * @property int $bank_id
+ * @property int $bank_offices_id
+ * @property string $currencies
+ * @property int $status
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \App\Bank $banks
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereBankId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereBankOfficesId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereCurrencies($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs wherePokupka($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereProdaja($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class BankKurs extends Model
 {
 
