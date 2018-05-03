@@ -4,10 +4,7 @@ namespace Modules\Blog\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategory extends Model
+class Comment extends Model
 {
     protected $fillable = [];
-    public function posts(){
-        return $this->hasMany(BlogPost::class);
-    }
 }

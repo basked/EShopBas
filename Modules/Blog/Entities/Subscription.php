@@ -4,7 +4,7 @@ namespace Modules\Blog\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BlogTag extends Model
+class Subscription extends Model
 {
     protected $fillable = [];
 }

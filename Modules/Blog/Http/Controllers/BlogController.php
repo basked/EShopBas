@@ -3,7 +3,8 @@
 namespace Modules\Blog\Http\Controllers;
 
 use App\User;
-use Modules\Blog\Entities\BlogPost;
+use Modules\Blog\Entities\Post;
+use Modules\Blog\Entities\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -14,11 +15,15 @@ class BlogController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
-    {
-        $post=BlogPost::find(1);
+    public function index(){
+        $post=Post::find(1);
+        $data['id']=$post->id;
+        $data['title']=$post->title;
+        $data['slug']=$post->slug;
+        $data['content']=$post->content;
+        $data['categoty']=$post->category->title;
 
-      return $post->category;
+      return  dd($data);
        // return BlogPost::all()->toJson();
        // return view('blog::index');
     }
