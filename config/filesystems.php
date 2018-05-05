@@ -45,7 +45,9 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            // меняем путь на public т.к. в блоге картинки будуь храниться в public
+            'root' => public_path(),
+           // 'root' => storage_path('app'),
         ],
 
         'public' => [

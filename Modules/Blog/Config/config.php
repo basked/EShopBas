@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'name' => 'Blog'
+    'name' => 'Blog',
+    'Description'=>'Blog for basked',
+    'storage'=>'Modules/Blog/uploads'
 ];
