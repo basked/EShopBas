@@ -26,14 +26,14 @@
         <link rel="dx-theme" data-theme="generic.softblue.compact" href="{{ Module::asset('Dev:css/dx.softblue.compact.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.contrast" href="{{ Module::asset('Dev:css/dx.contrast.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.contrast.compact" href="{{ Module::asset('Dev:css/dx.contrast.compact.css')}}" data-active="false">
-        <link rel="stylesheet" href="{{ Module::asset('Dev:css/style_dev.css')}}">
+        <link rel="stylesheet" href="{{ Module::asset('Dev:css/Dev_style.css')}}">
         <link rel="stylesheet" href="{{ Module::asset('Dev:css/style.css')}}">
 
         <title>Module Dev</title>
     </head>
     <body >
         @yield('content')
-        <script src="{{ Module::asset('Dev:js/script_dev.js') }}"></script>
+        <script src="{{ Module::asset('Dev:js/Dev_script.js') }}"></script>
         <script src="{{ Module::asset('Dev:js/data.js') }}"></script>
         <script src="{{ Module::asset('Dev:js/script.js') }}"></script>
     </body>

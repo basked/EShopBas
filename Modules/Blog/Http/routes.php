@@ -2,7 +2,12 @@
 
 Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules\Blog\Http\Controllers'], function()
 {
+
+    Route::get('/admin', 'Admin\DashboardController@index');
+
+
     Route::get('/', 'BlogController@index');
+
     Route::get('/1', function () {
         //$banks=[];
         echo Form::checkbox('name', 'value', true);

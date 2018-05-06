@@ -4,7 +4,7 @@
     "/css/app.css": "/css/app.css",
     "/devextreme/css/style.css": "/devextreme/css/style.css",
     "/devextreme/js/devall.js": "/devextreme/js/devall.js",
-    "/Modules/Dev/Resources/assets/js/script_dev.js": "/Modules/Dev/Resources/assets/js/script_dev.js",
+    "/Modules/Dev/Resources/assets/js/Dev_script.js": "/Modules/Dev/Resources/assets/js/Dev_script.js",
     "/Modules/Dev/Resources/assets/js/cldr.js": "/Modules/Dev/Resources/assets/js/cldr.js",
     "/Modules/Dev/Resources/assets/js/event.js": "/Modules/Dev/Resources/assets/js/event.js",
     "/Modules/Dev/Resources/assets/js/upplemental.js": "/Modules/Dev/Resources/assets/js/upplemental.js",
@@ -14,7 +14,7 @@
     "/Modules/Dev/Resources/assets/js/currency.js": "/Modules/Dev/Resources/assets/js/currency.js",
     "/Modules/Dev/Resources/assets/js/date.js": "/Modules/Dev/Resources/assets/js/date.js",
     "/Modules/Dev/Resources/assets/js/jszip.js": "/Modules/Dev/Resources/assets/js/jszip.js",
-    "/Modules/Dev/Resources/assets/css/style_dev.css": "/Modules/Dev/Resources/assets/css/style_dev.css",
+    "/Modules/Dev/Resources/assets/css/Dev_style.css": "/Modules/Dev/Resources/assets/css/Dev_style.css",
     "/Modules/Dev/Resources/assets/css/dx.light.css": "/Modules/Dev/Resources/assets/css/dx.light.css",
     "/Modules/Dev/Resources/assets/css/dx.dark.css": "/Modules/Dev/Resources/assets/css/dx.dark.css",
     "/Modules/Dev/Resources/assets/css/dx.android5.light.css": "/Modules/Dev/Resources/assets/css/dx.android5.light.css",
@@ -37,5 +37,7 @@
     "/Modules/Dev/Resources/assets/css/dx.win8.black.css": "/Modules/Dev/Resources/assets/css/dx.win8.black.css",
     "/Modules/Dev/Resources/assets/css/dx.win8.white.css": "/Modules/Dev/Resources/assets/css/dx.win8.white.css",
     "/Modules/Dev/Resources/assets/css/dx.win10.black.css": "/Modules/Dev/Resources/assets/css/dx.win10.black.css",
-    "/Modules/Dev/Resources/assets/css/dx.win10.white.css": "/Modules/Dev/Resources/assets/css/dx.win10.white.css"
+    "/Modules/Dev/Resources/assets/css/dx.win10.white.css": "/Modules/Dev/Resources/assets/css/dx.win10.white.css",
+    "/Modules/Blog/Resources/assets/css/Blog_admin.css": "/Modules/Blog/Resources/assets/css/Blog_admin.css",
+    "/Modules/Blog/Resources/assets/js/Blog_admin.js": "/Modules/Blog/Resources/assets/js/Blog_admin.js"
 }

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-05-02 21:22:51.
+    * Generated on 2018-05-06 20:43:35.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -94,6 +94,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -145,9 +146,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -235,6 +236,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -286,9 +288,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -376,6 +378,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -427,9 +430,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -517,6 +520,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -568,9 +572,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -658,6 +662,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -709,9 +714,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -799,6 +804,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -850,9 +856,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -940,6 +946,7 @@ namespace PHPSTORM_META {
         'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         'command.storage.link' => \Illuminate\Foundation\Console\StorageLinkCommand::class,
         'command.up' => \Illuminate\Foundation\Console\UpCommand::class,
+        'command.view.cache' => \Illuminate\Foundation\Console\ViewCacheCommand::class,
         'command.view.clear' => \Illuminate\Foundation\Console\ViewClearCommand::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
@@ -991,9 +998,9 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));

@@ -37,7 +37,7 @@ mix.scripts([
     // 'node_modules/devextreme/dist/js/dx.viz.js',
     // 'node_modules/devextreme/dist/js/dx.web.js',
     // 'node_modules/devextreme/dist/js/dx.viz-web.js',
-], 'Modules/Dev/Resources/assets/js/script_dev.js');
+], 'Modules/Dev/Resources/assets/js/Dev_script.js');
 
 // дополнительные скрипты
 // <!-- Reference Globalize if you need to localize app or your app uses custom date, number or currency formatting -->
@@ -56,7 +56,7 @@ mix.copy('node_modules/jszip/dist/jszip.js', 'Modules/Dev/Resources/assets/js/js
 mix.styles([
     'node_modules/devextreme/dist/css/dx.common.css',
     'node_modules/devextreme/dist/css/dx.spa.css'
-], 'Modules/Dev/Resources/assets/css/style_dev.css');
+], 'Modules/Dev/Resources/assets/css/Dev_style.css');
 // стили devextreme
 mix.copy('node_modules/devextreme/dist/css/dx.light.css', 'Modules/Dev/Resources/assets/css/dx.light.css');
 mix.copy('node_modules/devextreme/dist/css/dx.dark.css', 'Modules/Dev/Resources/assets/css/dx.dark.css');
@@ -89,7 +89,38 @@ mix.mix.copyDirectory('node_modules/devextreme/dist/css/icons', 'Modules/Dev/Res
 //КОНЕЦ для работы с модулем -=DEV=-
 //====================================
 //НАЧАЛО для работы с модулем -=BLOG=-
+mix.styles([
+    'Modules/Blog/Resources/assets/admin/assets/bootstrap/css/bootstrap.min.css',
+    'Modules/Blog/Resources/assets/admin/assets/font-awesome/4.5.0/css/font-awesome.min.css',
+    'Modules/Blog/Resources/assets/admin/assets/ionicons/2.0.1/css/ionicons.min.css',
+    'Modules/Blog/Resources/assets/admin/assets/dist/css/AdminLTE.min.css',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/iCheck/all.css',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/datepicker/datepicker3.css',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/select2/select2.min.css',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/dataTables.bootstrap.css',
+    'Modules/Blog/Resources/assets/admin/assets/dist/css/skins/_all-skins.min.css',
+], 'Modules/Blog/Resources/assets/css/Blog_admin.css');
 
+mix.scripts([
+    //'node_modules/html5shiv/dist/html5shiv.js',
+   // 'node_modules/respond.js/dest/respond.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/bootstrap/js/bootstrap.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/jQuery/jquery-2.2.3.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/select2/select2.full.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/slimScroll/jquery.slimscroll.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/iCheck/icheck.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/fastclick/fastclick.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/datepicker/bootstrap-datepicker.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/jquery.dataTables.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/dataTables.bootstrap.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/dist/js/app.min.js',
+    'Modules/Blog/Resources/assets/admin/assets/dist/js/demo.js',
+    'Modules/Blog/Resources/assets/admin/assets/dist/js/scripts.js',
+], 'Modules/Blog/Resources/assets/js/Blog_admin.js');
+
+mix.copy('Modules/Blog/Resources/assets/admin/assets/bootstrap/fonts', 'Modules/Blog/Resources/assets/fonts');
+mix.copy('Modules/Blog/Resources/assets/admin/assets/dist/fonts', 'Modules/Blog/Resources/assets/fonts');
+mix.copy('Modules/Blog/Resources/assets/admin/assets/dist/img', 'Modules/Blog/Resources/assets/img');
 
 
 // КОНЕЦ для работы с модулем -=BLOG=-
