@@ -126,9 +126,6 @@ Route::get('bank_kurses_parse', 'BankKursController@bankKursesParse');
 
 
 // test Route
-Route::get('test', function () {
-    //$banks=[];
+Route::get('testConnect', 'HomeController@testConnect');
 
-
-});
 // End test Route

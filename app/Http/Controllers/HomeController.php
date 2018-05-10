@@ -37,7 +37,9 @@ class HomeController extends Controller
         $this->testIns();
     }
 
-
+   public function testConnect(){
+      echo  Schema::getConnection()->getDatabaseName();
+   }
     // тестирование функции
 
     private function testDB ()
