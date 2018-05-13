@@ -9,12 +9,23 @@ use Illuminate\Routing\Controller;
 class DashboardController extends Controller
 {
     /**
+     * Display a ADMIN LTE
+     * @return Response
+     */
+    public function lte()
+    {
+        return view('blog::admin.lte');
+    }
+
+
+    /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-        return view('blog::admin.dashboard::index');
+        return view('blog::admin.index');
+       // return view('blog::admin.index');
     }
 
     /**

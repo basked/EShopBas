@@ -10,6 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "admin-lte": "^3.0.0-alpha.2",
         "axios": "^0.17",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
@@ -20,9 +21,9 @@
         "vue": "^2.5.13"
     },
     "dependencies": {
-        "admin-lte": "^3.0.0-alpha.2",
         "bootstrap-3-typeahead": "^4.0.2",
         "bootstrap-datepicker": "^1.7.1",
+        "bootstrap-sass": "^3.3.7",
         "bootstrap-select": "^1.12.4",
         "bootstrap-tagsinput": "^0.7.1",
         "bootstrap-touchspin": "^3.1.1",

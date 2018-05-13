@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-05-06 20:43:35.
+    * Generated on 2018-05-12 22:44:00.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -146,9 +146,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -288,9 +290,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -430,9 +434,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -572,9 +578,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -714,9 +722,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -856,9 +866,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -998,9 +1010,11 @@ namespace PHPSTORM_META {
         'auth.password' => \Illuminate\Auth\Passwords\PasswordBrokerManager::class,
         'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
+        'remote' => \Collective\Remote\RemoteManager::class,
+        'command.tail' => \Collective\Remote\Console\TailCommand::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));
