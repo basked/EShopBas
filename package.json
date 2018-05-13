@@ -53,6 +53,10 @@
         "multiselect": "^0.9.12",
         "nouislider": "^11.0.3",
         "respond.js": "^1.4.2",
-        "summernote": "^0.8.9"
+        "summernote": "^0.8.9",
+        "video.js": "^6.9.0",
+        "videojs-playbackrate-adjuster": "^1.0.0",
+        "videojs-playlist": "^4.2.0",
+        "videojs-playlist-ui": "^3.4.0"
     }
 }

@@ -126,3 +126,19 @@ mix.copy('Modules/Blog/Resources/assets/admin/assets/dist/img', 'Modules/Blog/Re
 
 // КОНЕЦ для работы с модулем -=BLOG=-
 //====================================
+//НАЧАЛО для работы с модулем -=COURSE=-
+mix.styles([
+    'node_modules/video.js/dist/video-js.css',
+    'node_modules/videojs-playlist/dist/videojs-playlist.js',
+    'node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.css'
+], 'Modules/Course/Resources/assets/css/Course_videojs.css');
+
+mix.scripts([
+    'node_modules/video.js/dist/video.js',
+    'node_modules/videojs-playlist/dist/videojs-playlist.js',
+    'node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.js',
+    'node_modules/videojs-playbackrate-adjuster/dist/browser/videojs-playbackrate-adjuster.js'
+], 'Modules/Course/Resources/assets/js/Course_videojs.js');
+
+// КОНЕЦ для работы с модулем -=COURSE=-
+//====================================

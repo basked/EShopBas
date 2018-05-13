@@ -39,5 +39,7 @@
     "/Modules/Dev/Resources/assets/css/dx.win10.black.css": "/Modules/Dev/Resources/assets/css/dx.win10.black.css",
     "/Modules/Dev/Resources/assets/css/dx.win10.white.css": "/Modules/Dev/Resources/assets/css/dx.win10.white.css",
     "/Modules/Blog/Resources/assets/css/Blog_admin.css": "/Modules/Blog/Resources/assets/css/Blog_admin.css",
-    "/Modules/Blog/Resources/assets/js/Blog_admin.js": "/Modules/Blog/Resources/assets/js/Blog_admin.js"
+    "/Modules/Blog/Resources/assets/js/Blog_admin.js": "/Modules/Blog/Resources/assets/js/Blog_admin.js",
+    "/Modules/Course/Resources/assets/css/Course_videojs.css": "/Modules/Course/Resources/assets/css/Course_videojs.css",
+    "/Modules/Course/Resources/assets/js/Course_videojs.js": "/Modules/Course/Resources/assets/js/Course_videojs.js"
 }
