@@ -4,7 +4,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules
 {
 
     Route::get('/admin', 'Admin\DashboardController@index');
-
+    Route::get('/lte', 'Admin\DashboardController@lte');
 
     Route::get('/', 'BlogController@index');
 

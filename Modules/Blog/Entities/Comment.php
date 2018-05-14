@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Blog\Entities\Comment whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Blog\Entities\Comment whereUserId($value)
  * @mixin \Eloquent
+ * @property int $status
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Blog\Entities\Comment whereStatus($value)
  */
 class Comment extends Model
 {

@@ -90,32 +90,33 @@ mix.mix.copyDirectory('node_modules/devextreme/dist/css/icons', 'Modules/Dev/Res
 //====================================
 //НАЧАЛО для работы с модулем -=BLOG=-
 mix.styles([
-    'Modules/Blog/Resources/assets/admin/assets/bootstrap/css/bootstrap.min.css',
-    'Modules/Blog/Resources/assets/admin/assets/font-awesome/4.5.0/css/font-awesome.min.css',
-    'Modules/Blog/Resources/assets/admin/assets/ionicons/2.0.1/css/ionicons.min.css',
-    'Modules/Blog/Resources/assets/admin/assets/dist/css/AdminLTE.min.css',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/iCheck/all.css',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/datepicker/datepicker3.css',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/select2/select2.min.css',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/dataTables.bootstrap.css',
-    'Modules/Blog/Resources/assets/admin/assets/dist/css/skins/_all-skins.min.css',
+    'node_modules/admin-lte/dist/css/adminlte.min.css',
+    'node_modules/admin-lte/plugins/iCheck/flat/blue.css',
+    'node_modules/admin-lte/plugins/morris/morris.css',
+    'node_modules/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
+    'node_modules/admin-lte/plugins/datepicker/datepicker3.css',
+    'node_modules/admin-lte/plugins/daterangepicker/daterangepicker-bs3.css',
+    'node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
+    'node_modules/admin-lte/plugins/font-awesome/css/font-awesome.min.css'
 ], 'Modules/Blog/Resources/assets/css/Blog_admin.css');
 
 mix.scripts([
-    //'node_modules/html5shiv/dist/html5shiv.js',
-   // 'node_modules/respond.js/dest/respond.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/bootstrap/js/bootstrap.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/jQuery/jquery-2.2.3.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/select2/select2.full.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/slimScroll/jquery.slimscroll.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/iCheck/icheck.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/fastclick/fastclick.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/datepicker/bootstrap-datepicker.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/jquery.dataTables.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/plugins/datatables/dataTables.bootstrap.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/dist/js/app.min.js',
-    'Modules/Blog/Resources/assets/admin/assets/dist/js/demo.js',
-    'Modules/Blog/Resources/assets/admin/assets/dist/js/scripts.js',
+    'node_modules/admin-lte/plugins/jquery/jquery.min.js',
+   // 'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
+    'node_modules/admin-lte/plugins/morris/morris.min.js',
+    'node_modules/admin-lte/plugins/sparkline/jquery.sparkline.min.js',
+    'node_modules/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
+    'node_modules/admin-lte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+    'node_modules/admin-lte/plugins/knob/jquery.knob.js',
+    'node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js',
+    'node_modules/admin-lte/plugins/datepicker/bootstrap-datepicker.js',
+    'node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
+    'node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js',
+    'node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js',
+    'node_modules/admin-lte/plugins/fastclick/fastclick.js',
+    'node_modules/admin-lte/dist/js/adminlte.js',
+    'node_modules/admin-lte/dist/js/pages/dashboard.js',
+    'node_modules/admin-lte/dist/js/demo.js'
 ], 'Modules/Blog/Resources/assets/js/Blog_admin.js');
 
 mix.copy('Modules/Blog/Resources/assets/admin/assets/bootstrap/fonts', 'Modules/Blog/Resources/assets/fonts');
@@ -124,4 +125,20 @@ mix.copy('Modules/Blog/Resources/assets/admin/assets/dist/img', 'Modules/Blog/Re
 
 
 // КОНЕЦ для работы с модулем -=BLOG=-
+//====================================
+//НАЧАЛО для работы с модулем -=COURSE=-
+mix.styles([
+    'node_modules/video.js/dist/video-js.css',
+    'node_modules/videojs-playlist/dist/videojs-playlist.js',
+    'node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.css'
+], 'Modules/Course/Resources/assets/css/Course_videojs.css');
+
+mix.scripts([
+    'node_modules/video.js/dist/video.js',
+    'node_modules/videojs-playlist/dist/videojs-playlist.js',
+    'node_modules/videojs-playlist-ui/dist/videojs-playlist-ui.js',
+    'node_modules/videojs-playbackrate-adjuster/dist/browser/videojs-playbackrate-adjuster.js'
+], 'Modules/Course/Resources/assets/js/Course_videojs.js');
+
+// КОНЕЦ для работы с модулем -=COURSE=-
 //====================================

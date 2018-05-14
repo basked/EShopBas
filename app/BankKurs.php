@@ -33,6 +33,8 @@ use Symfony\Component\DomCrawler\Crawler;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $status_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\BankKurs whereStatusId($value)
  */
 class BankKurs extends Model
 {

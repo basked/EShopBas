@@ -20,7 +20,7 @@ class CreateBankAtmsTable extends Migration
             $table->string('name_full');
             $table->string('address');
             $table->unsignedInteger('atm_site_id');
-            $table->json('currencies');
+            $table->string('currencies');
             $table->string('work_time')->nullable();
             $table->double('gps_x')->nullable();
             $table->double('gps_y')->nullable();

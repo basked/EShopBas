@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 2 | Blank Page</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{ Module::asset('Blog:css/Blog_admin.css')}}">
+    {{--<link rel="stylesheet" href="{{ Module::asset('Blog:css/Blog_admin.css')}}">--}}
+    <link rel="stylesheet" href="{{ Module::asset('Blog:css/app.css')}}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -465,7 +466,8 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="{{ Module::asset('Blog:js/Blog_admin.js') }}"></script>
+<script src="{{ Module::asset('Blog:js/app.js') }}"></script>
+{{--<script src="{{ Module::asset('Blog:js/Blog_admin.js') }}"></script>--}}
 </body>
 
 <!-- Mirrored from almsaeedstudio.com/themes/AdminLTE/pages/examples/blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Dec 2016 15:13:35 GMT -->

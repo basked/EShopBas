@@ -1,12 +1,13 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+// Variables // Bootstrap  4
 @import "variables";
 
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
+ //Bootstrap  3.3.7
+//@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 @import '~bootstrap-select/dist/css/bootstrap-select.min.css';
 @import '~bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css';
 //@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';

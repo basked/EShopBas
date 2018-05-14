@@ -10,6 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "admin-lte": "^3.0.0-alpha.2",
         "axios": "^0.17",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
@@ -20,9 +21,9 @@
         "vue": "^2.5.13"
     },
     "dependencies": {
-        "admin-lte": "^3.0.0-alpha.2",
         "bootstrap-3-typeahead": "^4.0.2",
         "bootstrap-datepicker": "^1.7.1",
+        "bootstrap-sass": "^3.3.7",
         "bootstrap-select": "^1.12.4",
         "bootstrap-tagsinput": "^0.7.1",
         "bootstrap-touchspin": "^3.1.1",
@@ -52,6 +53,10 @@
         "multiselect": "^0.9.12",
         "nouislider": "^11.0.3",
         "respond.js": "^1.4.2",
-        "summernote": "^0.8.9"
+        "summernote": "^0.8.9",
+        "video.js": "^6.9.0",
+        "videojs-playbackrate-adjuster": "^1.0.0",
+        "videojs-playlist": "^4.2.0",
+        "videojs-playlist-ui": "^3.4.0"
     }
 }

@@ -1,6 +1,9 @@
 <?php
 use App\BankOffice;
 
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -126,6 +129,10 @@ Route::get('bank_kurses_parse', 'BankKursController@bankKursesParse');
 
 
 // test Route
-Route::get('testConnect', 'HomeController@testConnect');
+Route::get('test', function () {
 
+dd(DB::table('banks')->get(['name']));
+   // Artisan::call("list");dd(Artisan::output());
+    //Artisan::call("make:controller",['name'=>'BaskController']);dd(Artisan::output());
+});
 // End test Route
