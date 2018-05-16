@@ -1,7 +1,6 @@
 <?php
 
-Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules\Blog\Http\Controllers'], function()
-{
+Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules\Blog\Http\Controllers'], function () {
 
     Route::get('/admin', 'Admin\DashboardController@index');
     Route::get('/lte', 'Admin\DashboardController@lte');
@@ -20,3 +19,5 @@ Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules
 
 
 });
+
+

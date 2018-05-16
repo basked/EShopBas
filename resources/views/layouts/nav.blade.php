@@ -13,6 +13,9 @@
     <span class="heading">Main</span>
     <ul class="list-unstyled">
         <li {{ Request::is('dashboard') ? "class=active" : '' }}><a href="{{ url('/dashboard') }}"><i class="icon-home"></i>Home </a></li>
+
+        <li {{ Request::is('kurses') ? "class=active" : '' }}><a href="{{ url('/kurses') }}"><i class="fas fa-university"></i>Курсы валют </a></li>
+
         <li><a href="#tablesDropdown" aria-expanded={{ Request::is(['tables','datatables']) ? 'true' : 'false' }} data-toggle="collapse"> <i class="icon-grid"></i>Tables
             </a>
             <ul id="tablesDropdown" class="collapse list-unstyled {{ Request::is(['tables','datatables']) ? 'show': '' }}">

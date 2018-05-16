@@ -14,7 +14,7 @@
         <link rel="dx-theme" data-theme="generic.dark" href="{{ Module::asset('Dev:css/dx.dark.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.light.compact" href="{{ Module::asset('Dev:css/dx.light.compact.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.dark.compact" href="{{ Module::asset('Dev:css/dx.dark.compact.css')}}" data-active="false">
-        <link rel="dx-theme" data-theme="generic.darkmoon" href="{{ Module::asset('Dev:css/dx.darkmoon.css')}}" data-active="true">
+        <link rel="dx-theme" data-theme="generic.darkmoon" href="{{ Module::asset('Dev:css/dx.darkmoon.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.darkmoon.compact" href="{{ Module::asset('Dev:css/dx.darkmoon.compact.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.carmine" href="{{ Module::asset('Dev:css/dx.carmine.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.carmine.compact" href="{{ Module::asset('Dev:css/dx.carmine.compact.css')}}" data-active="false">
@@ -26,6 +26,7 @@
         <link rel="dx-theme" data-theme="generic.softblue.compact" href="{{ Module::asset('Dev:css/dx.softblue.compact.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.contrast" href="{{ Module::asset('Dev:css/dx.contrast.css')}}" data-active="false">
         <link rel="dx-theme" data-theme="generic.contrast.compact" href="{{ Module::asset('Dev:css/dx.contrast.compact.css')}}" data-active="false">
+        <link rel="dx-theme" data-theme="generic.contrast.compact" href="{{ Module::asset('Dev:css/dx.basked.compact.css')}}" data-active="true">
         <link rel="stylesheet" href="{{ Module::asset('Dev:css/Dev_style.css')}}">
         <link rel="stylesheet" href="{{ Module::asset('Dev:css/style.css')}}">
 

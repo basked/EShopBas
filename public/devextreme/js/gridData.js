@@ -1,5 +1,11 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 var statuses = [{'id': 0, name: 'Укажите значение'}, {'id': 1, name: 'Активный'}, {'id': 2, name: 'Не активнай'}];
 var gridDataSource = new DevExpress.data.DataSource({
+
     // загрузка данных
     load: function (loadOptions) {
         return $.getJSON('api/banks');
@@ -10,6 +16,7 @@ var gridDataSource = new DevExpress.data.DataSource({
             url: "api/banks",
             method: "POST",
             data: {
+
                 name: values.name,
                 link: values.link,
                 site: values.site,
@@ -147,62 +154,62 @@ $(function () {
     });
 });
 
-// $(function () {
-//     $("#gridMasterDetailContainer").dxDataGrid({
-//         dataSource: devMasterDetailData,
-//         searchPanel: {visible: true},
-//         keyExpr: "id",
-//         columns: ["name", "site", "link", "created_at"],
-//         masterDetail: {
-//             enabled: true,
-//             template: function (container, options) {
-//                 var currentEmployeeData = options.data;
-//
-//                 $("<div>")
-//                     .addClass("master-detail-caption")
-//                     .text(currentEmployeeData.name + " last update " + currentEmployeeData.created_at + " Offices:[" + currentEmployeeData.offices.length + "]")
-//                     .appendTo(container);
-//
-//                 $("<div>")
-//                     .dxDataGrid({
-//                         columnAutoWidth: true,
-//                         showBorders: true,
-//                         keyExpr: "id",
-//                         columns: ["name", "address"],
-//                         selection: {
-//                             mode: "multiple"
-//                         },
-//                         dataSource: currentEmployeeData.offices,
-//                         masterDetail: {
-//                             enabled: true,
-//                             template: function (container, options) {
-//
-//                                 currentEmployee1Data = options.data;
-//                                 console.log('Данные ' + currentEmployee1Data)
-//                                 $("<div>")
-//                                     .addClass("master-detail-caption1")
-//                                     .text(currentEmployee1Data.pokupka + " last update " + currentEmployee1Data.prodaja + " Kurses:")
-//                                     .appendTo(container);
-//                                 $("<div>")
-//                                     .dxDataGrid({
-//                                         editing: {
-//                                             mode: 'row', // Specifying the edit mode
-//                                             allowUpdating: true, // Enable editing
-//                                             allowAdding: true, // Enable insertion
-//                                             allowDeleting: true // Enable removing
-//                                         },
-//                                         columnAutoWidth: true,
-//                                         showBorders: true,
-//                                         columns: ["currencies", "pokupka", "prodaja", "created_at"],
-//                                         selection: {
-//                                             mode: "multiple"
-//                                         },
-//                                         dataSource: currentEmployee1Data.kurses
-//                                     }).appendTo(container);
-//                             }
-//                         }
-//                     }).appendTo(container);
-//             }
-//         }
-//     });
-// });
+$(function () {
+    $("#gridMasterDetailContainer").dxDataGrid({
+        dataSource: devMasterDetailData,
+        searchPanel: {visible: true},
+        keyExpr: "id",
+        columns: ["name", "site", "link", "created_at"],
+        masterDetail: {
+            enabled: true,
+            template: function (container, options) {
+                var currentEmployeeData = options.data;
+
+                $("<div>")
+                    .addClass("master-detail-caption")
+                    .text(currentEmployeeData.name + " last update " + currentEmployeeData.created_at + " Offices:[" + currentEmployeeData.offices.length + "]")
+                    .appendTo(container);
+
+                $("<div>")
+                    .dxDataGrid({
+                        columnAutoWidth: true,
+                        showBorders: true,
+                        keyExpr: "id",
+                        columns: ["name", "address"],
+                        selection: {
+                            mode: "multiple"
+                        },
+                        dataSource: currentEmployeeData.offices,
+                        masterDetail: {
+                            enabled: true,
+                            template: function (container, options) {
+
+                                currentEmployee1Data = options.data;
+                                console.log('Данные ' + currentEmployee1Data)
+                                $("<div>")
+                                    .addClass("master-detail-caption1")
+                                    .text(currentEmployee1Data.pokupka + " last update " + currentEmployee1Data.prodaja + " Kurses:")
+                                    .appendTo(container);
+                                $("<div>")
+                                    .dxDataGrid({
+                                        editing: {
+                                            mode: 'row', // Specifying the edit mode
+                                            allowUpdating: true, // Enable editing
+                                            allowAdding: true, // Enable insertion
+                                            allowDeleting: true // Enable removing
+                                        },
+                                        columnAutoWidth: true,
+                                        showBorders: true,
+                                        columns: ["currencies", "pokupka", "prodaja", "created_at"],
+                                        selection: {
+                                            mode: "multiple"
+                                        },
+                                        dataSource: currentEmployee1Data.kurses
+                                    }).appendTo(container);
+                            }
+                        }
+                    }).appendTo(container);
+            }
+        }
+    });
+});

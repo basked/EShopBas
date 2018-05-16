@@ -45,7 +45,7 @@ class Category extends Model
      * @param bool $isActive
      * @return array
      */
-    private static function getProxy($isActive = false)
+    private static function getProxy($isActive = true)
     {
         $proxy = [];
         if ($isActive == true) {

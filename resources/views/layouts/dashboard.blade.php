@@ -1,4 +1,5 @@
 @section('css')
+    <link href="{{ asset('css/dark-admin/css/dx.android5.light.css') }}" rel="stylesheet">
 @endsection
 @extends('layouts.layout')
 @section('content')
@@ -451,7 +452,6 @@
                                             class="d-block">Sales</span>
                                 </div>
                             </div>
-                            u
                         </div>
                     </div>
                     <div class="col-lg-4">

@@ -4,4 +4,6 @@ Route::group(['middleware' => 'web', 'prefix' => 'course', 'namespace' => 'Modul
 {
     Route::get('/', 'CourseController@index');
     Route::get('/category', 'CategoryController@index');
+    Route::get('/test', 'CategoryController@test');
+
 });

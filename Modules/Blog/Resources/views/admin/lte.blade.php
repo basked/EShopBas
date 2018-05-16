@@ -430,32 +430,32 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-header">MISCELLANEOUS</li>
-                    <li class="nav-item">
-                        <a href="https://adminlte.io/docs" class="nav-link">
-                            <i class="nav-icon fa fa-file"></i>
-                            <p>Documentation</p>
-                        </a>
-                    </li>
-                    <li class="nav-header">LABELS</li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-circle-o text-danger"></i>
-                            <p class="text">Important</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-circle-o text-warning"></i>
-                            <p>Warning</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-circle-o text-info"></i>
-                            <p>Informational</p>
-                        </a>
-                    </li>
+                    {{--<li class="nav-header">MISCELLANEOUS</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a href="https://adminlte.io/docs" class="nav-link">--}}
+                            {{--<i class="nav-icon fa fa-file"></i>--}}
+                            {{--<p>Documentation</p>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-header">LABELS</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a href="#" class="nav-link">--}}
+                            {{--<i class="nav-icon fa fa-circle-o text-danger"></i>--}}
+                            {{--<p class="text">Important</p>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a href="#" class="nav-link">--}}
+                            {{--<i class="nav-icon fa fa-circle-o text-warning"></i>--}}
+                            {{--<p>Warning</p>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a href="#" class="nav-link">--}}
+                            {{--<i class="nav-icon fa fa-circle-o text-info"></i>--}}
+                            {{--<p>Informational</p>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

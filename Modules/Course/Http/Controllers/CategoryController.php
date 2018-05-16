@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Course\Entities\Category;
+use Modules\Course\Entities\Course;
 
 
 class CategoryController extends Controller
 {
+
+
+    public function test(){
+        return Category::where('link','=','https://coursehunters.net/mobile-development')->count();
+    }
     /**
      * Display a listing of the resource.
      * @return Response

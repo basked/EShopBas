@@ -24,6 +24,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('kurses', function () {
+    return view('layouts.kurs', ['name' => 'basked.pro']);
+});
+
 Route::get('/testSetDB', 'HomeController@testSetDB');
 
 Route::get('dashboard', function () {
