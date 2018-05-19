@@ -19,7 +19,9 @@ class BlogController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+
+
+    public function allData()
     {
         $post = Post::findOrFail(1);
 //        $post->sl
@@ -85,9 +87,22 @@ class BlogController extends Controller
             'dataTag'=>$dataTag
         ];
 
-        return dd($data);
+      dd($data);
 
     }
+
+
+    /**
+     * Show the form for creating a new resource.
+     * @return Response
+     */
+    public function index()
+    {
+       // return view('blog::admin.dark.categories.create');
+        return view('blog::admin.dark.categories.index');
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -95,7 +110,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog::create');
+        return view('blog::admin.dark.categories.create');
     }
 
     /**

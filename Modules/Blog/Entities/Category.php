@@ -28,7 +28,7 @@ class Category extends Model
     use Sluggable;
     // таблица в БД
     protected $table = 'blog_categories';
-    protected $fillable = [];
+    protected $fillable = ['title'];
     // показываем только нужные поля
     protected $visible = ['title', 'slug'];
 

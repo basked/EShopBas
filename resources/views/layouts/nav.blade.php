@@ -13,6 +13,17 @@
     <span class="heading">Main</span>
     <ul class="list-unstyled">
         <li {{ Request::is('dashboard') ? "class=active" : '' }}><a href="{{ url('/dashboard') }}"><i class="icon-home"></i>Home </a></li>
+
+        <li><a href="#blog" aria-expanded={{ Request::is(['blog']) ? 'true' : 'false' }} data-toggle="collapse"> <i class="icon-grid"></i>Blog
+            </a>
+            <ul id="blog" class="collapse list-unstyled {{ Request::is(['blog/admin/categories','blog/admin/categories/create','blog/admin/categories/edit','blog/admin/posts']) ? 'show': '' }}">
+                <li {{ Request::is(['blog/admin/categories','blog/admin/categories/create','blog/admin/categories/edit']) ? "class=active" : '' }}><a href="{{ url('blog/admin/categories') }}">Категории</a></li>
+                <li {{ Request::is('blog/admin/posts') ? "class=active" : '' }}><a href="{{ url('blog/admin/posts') }}">Статьи</a></li>
+                {{--<li {{ Request::is('datatables') ? "class=active" : '' }}><a href="{{ url('/datatables') }}">Datatable</a></li>--}}
+            </ul>
+        </li>
+
+
         <li><a href="#tablesDropdown" aria-expanded={{ Request::is(['tables','datatables']) ? 'true' : 'false' }} data-toggle="collapse"> <i class="icon-grid"></i>Tables
             </a>
             <ul id="tablesDropdown" class="collapse list-unstyled {{ Request::is(['tables','datatables']) ? 'show': '' }}">

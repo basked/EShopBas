@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @return Response
+     * @return Responsencoamitd_basdb@192.168.0.105
      */
     public function create()
     {
