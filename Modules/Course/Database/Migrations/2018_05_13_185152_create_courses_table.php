@@ -16,16 +16,19 @@ class CreateCoursesTable extends Migration
         Schema::create('course_courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('name_original');
             $table->string('slug');
+            $table->string('lang');
             $table->string('link');
             $table->text('description');
-            $table->string('addition');
-            $table->dateTime('duration');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('course_categories');
             $table->unsignedInteger('sourse_id');
             $table->foreign('sourse_id')->references('id')->on('course_sources');
             $table->integer('status')->default(1);
+            $table->dateTime('duration')->nullable();
+            $table->date('date_release')->nullable();
+            $table->date('date_add')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
     <ul class="list-unstyled">
         <li {{ Request::is('dashboard') ? "class=active" : '' }}><a href="{{ url('/dashboard') }}"><i
                         class="icon-home"></i>Home </a></li>
-
+        {{--BLOG BEGIN--}}
         <li><a href="#blog"
                aria-expanded={{ Request::is(['blog/admin/categories*','blog/admin/comments*','blog/admin/posts*','blog/admin/tags*','blog/admin/users*','blog/admin/subscriptions*']) ? 'true' : 'false' }} data-toggle="collapse"><i
                         class="fab fa-blogger-b"></i>Blog
@@ -41,7 +41,24 @@
 
             </ul>
         </li>
+        {{--BLOG END--}}
 
+        {{--COURSE BEGIN--}}
+        <li><a href="#course"
+               aria-expanded={{ Request::is(['course/admin/categories*','course/admin/sources*','course/admin/courses*']) ? 'true' : 'false' }} data-toggle="collapse"><i class="fas fa-graduation-cap"></i>Видео уроки
+            </a>
+            <ul id="course"
+                class="collapse list-unstyled {{ Request::is(['course/admin/categories*','course/admin/sources*','course/admin/courses*']) ? 'show': '' }}">
+                <li {{ Request::is(['course/admin/categories*']) ? "class=active" : '' }}><a
+                            href="{{ url('course/admin/categories') }}"><i class="fas fa-list"></i>Категории</a></li>
+                <li {{ Request::is(['course/admin/sources*']) ? "class=active" : '' }}><a
+                            href="{{ url('course/admin/sources') }}"><i class="fas fa-chalkboard-teacher"></i>Источники</a></li>
+                <li {{ Request::is(['course/admin/courses*']) ? "class=active" : '' }}><a
+                            href="{{ url('course/admin/courses') }}"><i class="fas fa-book-open"></i>Курсы</a></li>
+
+            </ul>
+        </li>
+        {{--COURSE END--}}
 
         <li><a href="#tablesDropdown"
                aria-expanded={{ Request::is(['tables','datatables']) ? 'true' : 'false' }} data-toggle="collapse"> <i
