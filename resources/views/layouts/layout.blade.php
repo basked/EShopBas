@@ -16,6 +16,7 @@
     <link id="new-stylesheet" rel="stylesheet" href="{{ asset('css/style.blue.premium.css') }}">
     <link href="{{ asset('css/dark-admin/css/custom.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('css/dark-admin/img/favicon.ico') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style type="text/css">/* Chart.js */
         @-webkit-keyframes chartjs-render-animation {
             from {
@@ -61,7 +62,7 @@
 <!--Vue Component <Admindashboard id="admin-dashboard"></Admindashboard>-->
     <!--Dashboard End-->
 
-    {{--<Adminfooter id="admfooter"></Adminfooter>--}}
+    <Adminfooter id="admfooter"></Adminfooter>
 </div>
 <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button"
         class="btn btn-primary btn-sm d-none d-md-inline-block"><i class="fa fa-cog fa-2x"></i></button>

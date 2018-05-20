@@ -33,13 +33,13 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Коментарии</li>
             </ul>
         </div>
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('categories.create')}}"
+                    <a type="button" href="{{route('comments.create')}}"
                        class="btn btn-primary">Добавить
                     </a>
                 </div>
@@ -49,28 +49,26 @@
                     </div>
                     <div class="block-body">
                         <div class="table-responsive">
-                            <table id="datatable1" style="width: 100%;" class="table">
+                            <table id="datatable1" style="width: 100%;" class="table display responsive nowrap">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Slug</th>
+                                    <th>Text</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                @foreach($categories as $category)
+                                @foreach($comments as $comment)
                                     <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->title}}</td>
-                                        <td>{{$category->slug}}</td>
+                                        <td>{{$comment->id}}</td>
+                                        <td>{{$comment->text}}</td>
                                         <td>
-                                            <a  href="{{route('categories.edit',$category->id)}}"
+                                            <a  href="{{route('comments.edit',$comment->id)}}"
                                                class="fas fa-edit edit"></a>
                                             <span> | </span>
-                                            {!! Form::open(['route'=>['categories.destroy',$category->id],'method'=>'delete']) !!}
+                                            {!! Form::open(['route'=>['comments.destroy',$comment->id],'method'=>'delete']) !!}
                                             <button onclick=" return confirm('Удалить запись?')" type="submit" class="delete">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Тэги</li>
             </ul>
         </div>
         <section class="no-padding-top">
@@ -22,26 +22,26 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block"> Добавить категорию</strong>
+                            <div class="title"><strong class="d-block">Редактировать тэг</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>'categories.store']) !!}
+                                {!! Form::open(['route'=>['tags.update',$tag->id],'method'=>'put']) !!}
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" name="title" value="{{$tag->title}}"
+                                               class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
-                                        <button type="submit" class="btn btn-primary pull-right">Добавить</button>
-                                    </div></button>
+                                        <a href="{{route('tags.index')}}" class="btn btn-secondary">Назад</a>
+                                        <button type="submit" class="btn btn-primary pull-right">Сохранить</button>
                                     </div>
-                                </div>
 
-                                {!! Form::close() !!}
+                                    {!! Form::close() !!}
+                                </div>
                             </div>
                         </div>
                     </div>

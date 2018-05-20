@@ -33,13 +33,13 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Тэги</li>
             </ul>
         </div>
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('categories.create')}}"
+                    <a type="button" href="{{route('tags.create')}}"
                        class="btn btn-primary">Добавить
                     </a>
                 </div>
@@ -61,16 +61,16 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach($categories as $category)
+                                @foreach($tags as $tag)
                                     <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->title}}</td>
-                                        <td>{{$category->slug}}</td>
+                                        <td>{{$tag->id}}</td>
+                                        <td>{{$tag->title}}</td>
+                                        <td>{{$tag->slug}}</td>
                                         <td>
-                                            <a  href="{{route('categories.edit',$category->id)}}"
+                                            <a  href="{{route('tags.edit',$tag->id)}}"
                                                class="fas fa-edit edit"></a>
                                             <span> | </span>
-                                            {!! Form::open(['route'=>['categories.destroy',$category->id],'method'=>'delete']) !!}
+                                            {!! Form::open(['route'=>['tags.destroy',$tag->id],'method'=>'delete']) !!}
                                             <button onclick=" return confirm('Удалить запись?')" type="submit" class="delete">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

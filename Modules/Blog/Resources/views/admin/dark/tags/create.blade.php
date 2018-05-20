@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Тэги</li>
             </ul>
         </div>
         <section class="no-padding-top">
@@ -22,11 +22,11 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block"> Добавить категорию</strong>
+                            <div class="title"><strong class="d-block">Добавить тэг</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>'categories.store']) !!}
+                                {!! Form::open(['route'=>'tags.store']) !!}
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
@@ -35,14 +35,14 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
+                                        <a href="{{route('tags.index')}}" class="btn btn-secondary">Назад</a>
                                         <button type="submit" class="btn btn-primary pull-right">Добавить</button>
-                                    </div></button>
                                     </div>
+                                    </button>
                                 </div>
-
-                                {!! Form::close() !!}
                             </div>
+
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

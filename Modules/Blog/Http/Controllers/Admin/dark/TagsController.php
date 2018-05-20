@@ -5,10 +5,11 @@ namespace Modules\Blog\Http\Controllers\Admin\dark;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Blog\Entities\Category;
+
+use Modules\Blog\Entities\Tag;
 use Illuminate\Validation\Validator;
 
-class CategoriesController extends Controller
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        //  return   $categories;
-        return view('blog::admin.dark.categories.index', ['categories' => $categories]);
+        $tags = Tag::all();
+        return view('blog::admin.dark.tags.index', ['tags' => $tags]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.dark.categories.create');
+        return view('blog::admin.dark.tags.create');
     }
 
     /**
@@ -38,11 +38,10 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'title' => 'required|unique:blog_tags|max:64',
         ]);
-
-        Category::create($request->all());
-        return redirect()->route('categories.index');
+        Tag::create($request->all());
+        return redirect()->route('tags.index');
     }
 
 
@@ -52,8 +51,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('blog::admin.dark.categories.edit', ['category' => $category]);
+        $tag = Tag::find($id);
+        return view('blog::admin.dark.tags.edit', ['tag' => $tag]);
     }
 
     /**
@@ -64,12 +63,12 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'title' => 'required|unique:blog_tags|max:64',
         ]);
 
-        $category = Category::find($id);
-        $category->update($request->all());
-        return redirect()->route('categories.index');
+        $tag = Tag::find($id);
+        $tag->update($request->all());
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -78,7 +77,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        return redirect()->route('categories.index');
+        Tag::find($id)->delete();
+        return redirect()->route('tags.index');
     }
 }

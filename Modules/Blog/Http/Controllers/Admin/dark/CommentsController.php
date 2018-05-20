@@ -5,10 +5,11 @@ namespace Modules\Blog\Http\Controllers\Admin\dark;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Blog\Entities\Category;
+use Modules\Blog\Entities\Comment;
 use Illuminate\Validation\Validator;
 
-class CategoriesController extends Controller
+
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        //  return   $categories;
-        return view('blog::admin.dark.categories.index', ['categories' => $categories]);
+        $comments=Comment::all();
+        return view('blog::admin.dark.comments.index', ['comments' => $comments]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.dark.categories.create');
+        return view('blog::admin.dark.comments.create');
     }
 
     /**
@@ -38,11 +38,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'text' => 'required|max:64',
+
         ]);
 
-        Category::create($request->all());
-        return redirect()->route('categories.index');
+        Comment::create($request->all());
+        return redirect()->route('comments.index');
     }
 
 
@@ -52,8 +53,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('blog::admin.dark.categories.edit', ['category' => $category]);
+        $comment = Comment::find($id);
+        return view('blog::admin.dark.comments.edit', ['comment' => $comment]);
+
     }
 
     /**
@@ -61,24 +63,23 @@ class CategoriesController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'text' => 'required|max:64',
         ]);
 
-        $category = Category::find($id);
-        $category->update($request->all());
-        return redirect()->route('categories.index');
+        $comment = Comment::find($id);
+        $comment->update($request->all());
+        return redirect()->route('comments.index');
     }
-
     /**
      * Remove the specified resource from storage.
      * @return Response
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        return redirect()->route('categories.index');
+        Comment::find($id)->delete();
+        return redirect()->route('comments.index');
     }
 }

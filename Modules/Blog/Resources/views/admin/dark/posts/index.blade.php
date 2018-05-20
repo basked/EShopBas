@@ -6,12 +6,14 @@
         table.table form {
             display: inline-block;
         }
+
         a.edit {
             background: transparent;
             border: none;
             text-decoration: none;
             padding: 0px;
         }
+
         button.delete {
             background: transparent;
             border: none;
@@ -33,18 +35,18 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Посты</li>
             </ul>
         </div>
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('categories.create')}}"
+                    <a type="button" href="{{route('posts.create')}}"
                        class="btn btn-primary">Добавить
                     </a>
                 </div>
                 <div class="block">
-                    <div class="title"><strong>Категории</strong>
+                    <div class="title"><strong>Посты</strong>
 
                     </div>
                     <div class="block-body">
@@ -52,26 +54,26 @@
                             <table id="datatable1" style="width: 100%;" class="table">
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Slug</th>
-                                    <th>Action</th>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Slug</th>
+                                    <th scope="col">Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-
-                                @foreach($categories as $category)
+                                @foreach($posts as $post)
                                     <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->title}}</td>
-                                        <td>{{$category->slug}}</td>
+                                        <th scope="row">{{$post->id}}</th>
+                                        <td>{{$post->title}}</td>
+                                        <td>{{$post->slug}}</td>
                                         <td>
-                                            <a  href="{{route('categories.edit',$category->id)}}"
+                                            <a href="{{route('posts.edit',$post->id)}}"
                                                class="fas fa-edit edit"></a>
                                             <span> | </span>
-                                            {!! Form::open(['route'=>['categories.destroy',$category->id],'method'=>'delete']) !!}
-                                            <button onclick=" return confirm('Удалить запись?')" type="submit" class="delete">
+                                            {!! Form::open(['route'=>['posts.destroy',$post->id],'method'=>'delete']) !!}
+                                            <button onclick=" return confirm('Удалить запись?')" type="submit"
+                                                    class="delete">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                             {!! Form::close() !!}

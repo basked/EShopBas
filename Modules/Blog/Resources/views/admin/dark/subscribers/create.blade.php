@@ -22,7 +22,7 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block"> Добавить категорию</strong>
+                            <div class="title"><strong class="d-block"> Добавитькатегорию</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">

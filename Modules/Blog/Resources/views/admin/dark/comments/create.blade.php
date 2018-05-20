@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Категории</li>
+                <li class="breadcrumb-item active">Коментарии</li>
             </ul>
         </div>
         <section class="no-padding-top">
@@ -22,22 +22,22 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block"> Добавить категорию</strong>
+                            <div class="title"><strong class="d-block">Добавить коментарий</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>'categories.store']) !!}
+                                {!! Form::open(['route'=>'comments.store']) !!}
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" name="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
+                                        <a href="{{route('comments.index')}}" class="btn btn-secondary">Назад</a>
                                         <button type="submit" class="btn btn-primary pull-right">Добавить</button>
-                                    </div></button>
+                                    </div>
                                     </div>
                                 </div>
 
@@ -46,7 +46,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         @section('js')
             <script src="{{ asset('css/dark-admin/js/components-notifications.js') }}"></script>

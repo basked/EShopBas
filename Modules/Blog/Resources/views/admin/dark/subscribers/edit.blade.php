@@ -22,26 +22,26 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block"> Добавить категорию</strong>
+                            <div class="title"><strong class="d-block">Редактировать категорию</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>'categories.store']) !!}
+                                {!! Form::open(['route'=>['categories.update',$category->id],'method'=>'put']) !!}
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" name="title" value="{{$category->title}}"
+                                               class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
-                                        <button type="submit" class="btn btn-primary pull-right">Добавить</button>
-                                    </div></button>
+                                        <button type="submit" class="btn btn-primary pull-right">Сохранить</button>
                                     </div>
-                                </div>
 
-                                {!! Form::close() !!}
+                                    {!! Form::close() !!}
+                                </div>
                             </div>
                         </div>
                     </div>

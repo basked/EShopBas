@@ -5,10 +5,10 @@ namespace Modules\Blog\Http\Controllers\Admin\dark;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Blog\Entities\Category;
+use Modules\Blog\Entities\Post;
 use Illuminate\Validation\Validator;
 
-class CategoriesController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        //  return   $categories;
-        return view('blog::admin.dark.categories.index', ['categories' => $categories]);
+        $posts =Post::all();
+        return view('blog::admin.dark.posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -27,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.dark.categories.create');
+        return view('blog::admin.dark.posts.create');
     }
 
     /**
@@ -38,13 +37,13 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'title' => 'required|unique:blog_posts|max:64',
+            'content' => 'required|max:255',
         ]);
 
-        Category::create($request->all());
-        return redirect()->route('categories.index');
+        Post::create($request->all());
+        return redirect()->route('posts.index');
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -52,8 +51,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('blog::admin.dark.categories.edit', ['category' => $category]);
+        $post = Post::find($id);
+        return view('blog::admin.dark.posts.edit', ['post' => $post]);
+
     }
 
     /**
@@ -61,15 +61,16 @@ class CategoriesController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'title' => 'required|unique:blog_posts|max:255',
+            'content' => 'required|max:255',
         ]);
 
-        $category = Category::find($id);
-        $category->update($request->all());
-        return redirect()->route('categories.index');
+        $post = Post::find($id);
+        $post->update($request->all());
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -78,7 +79,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        return redirect()->route('categories.index');
+        Post::find($id)->delete();
+        return redirect()->route('posts.index');
     }
 }
