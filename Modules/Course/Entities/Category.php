@@ -29,17 +29,17 @@ use Exception;
  */
 class Category extends Model
 {
+    use Sluggable;
     protected $table = 'course_categories';
-    protected $fillable = [];
-
-
+    protected $fillable = ['name'];
+    protected $visible = ['name', 'slug'];
+ // trait
     public function sluggable()
     {
         return [
             'slug' => ['source' => 'name']
         ];
     }
-
 
     /**
      * @param bool $isActive
@@ -79,12 +79,14 @@ class Category extends Model
             try {
                 $crawler = new Crawler($categories);
                 for ($i = 0; $i < $res = $crawler->filter('.menu-aside__ul>li')->count(); $i++) {
-                    $category = new Category();
-                    $category->name = trim($crawler->filter('.menu-aside__ul>li>a')->eq($i)->text());
-                    $category->link = trim($crawler->filter('.menu-aside__ul>li>a')->eq($i)->attr('href'));
-                    $category->slug = '';
-                    $category->status = 1;
-                    $category->save();
+                    if (!self::existCategory(trim($crawler->filter('.menu-aside__ul>li>a')->eq($i)->attr('href')))) {
+                        $category = new Category();
+                        $category->name = trim($crawler->filter('.menu-aside__ul>li>a')->eq($i)->text());
+                        $category->link = trim($crawler->filter('.menu-aside__ul>li>a')->eq($i)->attr('href'));
+                      // $category->slug = '';
+                        $category->status = 1;
+                        $category->save();
+                    };
                 }
             } catch (Exception $e) {
                 echo 'Ошибки при записи данных в таблицу : ' . $categories->table, $e->getMessage(), "\n";
@@ -98,9 +100,13 @@ class Category extends Model
         self::setDataFromSite($categories);
     }
 
-    public static function categories(){
-       self::CategoresParse();
-        return Category::all(['name','link'])->toArray();
+    private static function existCategory($link)
+    {
+        $cnt = Category::where('link', '=', $link)->count();
+        if ($cnt > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 }

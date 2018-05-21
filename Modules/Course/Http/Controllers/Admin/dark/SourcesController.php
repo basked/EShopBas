@@ -1,30 +1,22 @@
 <?php
 
-namespace Modules\Course\Http\Controllers;
+namespace Modules\Course\Http\Controllers\Admin\dark;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Course\Entities\Category;
-use Modules\Course\Entities\Course;
+use Modules\Course\Entities\Source;
 
-
-class CategoryController extends Controller
+class SourcesController extends Controller
 {
-
-
-    public function test(){
-        return Category::where('link','=','https://coursehunters.net/mobile-development')->count();
-    }
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-
-        dd(Category::categories());
-      //  return view('course::index');
+        $sources = Source::all();
+        return view('course::admin.dark.sources.index', ['sources' => $sources]);
     }
 
     /**
@@ -76,7 +68,19 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      * @return Response
      */
-    public function destroy()
+    public function destroy($id)
     {
+        Source::find($id)->delete();
+        return redirect()->route('sources.index');
+    }
+
+    /**
+     * Parse all.
+     * @return Response
+     */
+    public function parse()
+    {
+        Source::SoursesParse();
+        return redirect()->route('sources.index');
     }
 }

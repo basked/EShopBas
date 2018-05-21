@@ -30,7 +30,7 @@ class Comment extends Model
 {
     // таблица в БД
     protected $table = 'blog_comments';
-    protected $fillable = [];
+    protected $fillable = ['text'];
     // показываем только нужные поля
     protected $visible = ['text'];
 
