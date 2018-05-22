@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">Коментарии</li>
+                <li class="breadcrumb-item active">Статьи</li>
             </ul>
         </div>
         <section class="no-padding-top">
@@ -22,34 +22,40 @@
                     <!-- Basic Form-->
                     <div class="col-lg-12">
                         <div class="block ">
-                            <div class="title"><strong class="d-block">Добавить коментарий</strong>
+                            <div class="title"><strong class="d-block">Редактировать статью</strong>
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>'comments.store']) !!}
-                                <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
+                                {!! Form::open(['route'=>['posts.update',$post->id],'method'=>'put']) !!}
                                 <div class="form-group row">
-                                    <div class="col-9">
+                                    <div class="col-10">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="text" class="form-control">
-
+                                        <input type="text" name="title" value="{{$post->title}}"
+                                               class="form-control">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-xl-10">
+                                        <label class="form-control-label">Полный текст</label>
+                                        <textarea class="summernote" name="content">{{$post->content}}</textarea>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <a href="{{route('comments.index')}}" class="btn btn-secondary">Назад</a>
-                                        <button type="submit" class="btn btn-primary pull-right">Добавить</button>
+                                        <a href="{{route('posts.index')}}" class="btn btn-secondary">Назад</a>
+                                        <button type="submit" class="btn btn-primary pull-right">Сохранить</button>
                                     </div>
-                                    </div>
+                                    {!! Form::close() !!}
                                 </div>
-
-                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         @section('js')
+            <script src="{{ asset('css/dark-admin/js/forms-texteditor.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/components-notifications.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>
         @endsection

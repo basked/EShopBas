@@ -27,6 +27,7 @@
                             </div>
                             <div class="block-body">
                                 {!! Form::open(['route'=>'tags.store']) !!}
+                                <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>

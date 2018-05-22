@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index">Блог</a></li>
-                <li class="breadcrumb-item active">статьи</li>
+                <li class="breadcrumb-item active">Cтатьи</li>
             </ul>
         </div>
         <section class="no-padding-top">
@@ -27,38 +27,61 @@
                             </div>
                             <div class="block-body">
                                 {!! Form::open(['route'=>'posts.store']) !!}
+                                <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Наименование</label>
                                         <input type="text" name="title" class="form-control">
                                     </div>
                                 </div>
-
-
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Дата</label>
-                                        <input type="text" value="{{date('m/d/Y')}}" class="form-control input-datepicker-autoclose">
+                                        <input name='created_at' type="text" value="{{date('m/d/Y')}}"
+                                               class="form-control input-datepicker-autoclose">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10 ">
                                         <label class="form-control-label">Категория</label>
-                                        <select class="selectpicker form-control">
-                                            <optgroup label="Picnic">
-                                                <option>Mustard</option>
-                                                <option>Ketchup</option>
-                                                <option>Relish</option>
-                                            </optgroup>
-                                            <optgroup label="Camping">
-                                                <option>Tent</option>
-                                                <option>Flashlight</option>
-                                                <option>Toilet Paper</option>
-                                            </optgroup>
+                                        <select name='category_id' class="selectpicker form-control">
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                            @endforeach
                                         </select>
-
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10 ">
+                                        <label class="form-control-label">Тэги</label>
+                                        <select class="selectpicker form-control">
+                                            @foreach($tags as $tag)
+                                                <option value="{{$tag->id}}">{{$tag->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <div class="i-checks">
+                                            <input name='is_featured' id="checkboxCustom1" type="checkbox" value="true" checked="true"
+                                                   class="checkbox-template">
+                                            <label for="checkboxCustom1">Рекомендовать</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <div class="i-checks">
+
+                                            <input name='status' id="checkboxCustom2" type="checkbox" value="false" checked="false"
+                                                   class="checkbox-template">
+                                            <label for="checkboxCustom2">Черновик</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Изображение</label>
@@ -86,12 +109,12 @@
             </div>
         </section>
         @section('js')
-         <script>
-             $(".input-datepicker-autoclose").datepicker({
-                 autoclose: !0,
-                 format: "mm/dd/yyyy"
-             })
-         </script>
+            <script>
+                $(".input-datepicker-autoclose").datepicker({
+                    autoclose: !0,
+                    format: "mm/dd/yyyy"
+                })
+            </script>
             <script src="{{ asset('css/dark-admin/js/forms-texteditor.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/components-notifications.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>

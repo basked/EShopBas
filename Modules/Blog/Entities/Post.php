@@ -51,9 +51,9 @@ class Post extends Model
      */
     protected $table = 'blog_posts';
 
-    protected $fillable = ['title', 'content',];
+    protected $fillable = ['title', 'content','category_id','user_id','status','is_featured'];
     // показываем только нужные поля
-    protected $visible = ['title', 'slug', 'content', 'status', 'views', 'autor'];
+    protected $visible = ['title', 'slug', 'content', 'status', 'views', 'autor','is_featured'];
 
     /**
      * Связь с категорией

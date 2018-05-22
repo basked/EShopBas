@@ -30,7 +30,7 @@ class Category extends Model
     protected $table = 'blog_categories';
     protected $fillable = ['title'];
     // показываем только нужные поля
-    protected $visible = ['title', 'slug'];
+    protected $visible = ['id','title', 'slug'];
 
     public function posts()
     {

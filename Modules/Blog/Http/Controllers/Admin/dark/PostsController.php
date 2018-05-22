@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Post;
+use Modules\Blog\Entities\Category;
+use Modules\Blog\Entities\Tag;
+
 use Illuminate\Validation\Validator;
 
 class PostsController extends Controller
@@ -26,7 +29,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog::admin.dark.posts.create');
+        $categories = Category::all();
+        $tags= Tag::all();
+        return view('blog::admin.dark.posts.create',['categories'=>$categories,'tags'=>$tags]);
     }
 
     /**
@@ -36,11 +41,14 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'required|unique:blog_posts|max:64',
             'content' => 'required|max:255',
-        ]);
+            'category_id'=>'required'
 
+        ]);
+return $request->all();
         Post::create($request->all());
         return redirect()->route('posts.index');
     }

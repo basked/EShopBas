@@ -28,9 +28,9 @@ class Tag extends Model
     // таблица в БД
     protected $table = 'blog_tags';
     // показываем только нужные поля
-    protected $visible = ['title', 'slug'];
+    protected $visible = ['id','title','slug'];
     // массовое заполнение
-    protected $fillable = ['title','user_id'];
+    protected $fillable = ['title'];
 
     public function posts()
     {

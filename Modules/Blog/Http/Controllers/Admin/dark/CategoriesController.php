@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Blog\Entities\Category;
 use Illuminate\Validation\Validator;
+use Modules\Blog\Entities\Tag;
 
 class CategoriesController extends Controller
 {
@@ -17,7 +18,6 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::all();
-        //  return   $categories;
         return view('blog::admin.dark.categories.index', ['categories' => $categories]);
     }
 

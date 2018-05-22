@@ -14,6 +14,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'blog', 'namespace' => 'Modules
     Route::resource('/admin/posts', 'Admin\dark\PostsController');
     Route::resource('/admin/tags', 'Admin\dark\TagsController');
     Route::resource('/admin/comments', 'Admin\dark\CommentsController');
+    Route::resource('/admin/users', 'Admin\dark\UsersController');
     Route::get('/server', function () {
         echo $_SERVER['REMOTE_HOST'];
 
