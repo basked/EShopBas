@@ -40,7 +40,7 @@
             <div class="container-fluid">
                 <div class="block-body text-left">
                     <a type="button" href="{{route('categories.create')}}"
-                       class="btn btn-primary">Добавить
+                       class="btn btn-primary" autofocus>Добавить
                     </a>
                 </div>
                 <div class="block">

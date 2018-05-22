@@ -27,13 +27,74 @@
                             </div>
                             <div class="block-body">
                                 {!! Form::open(['route'=>['posts.update',$post->id],'method'=>'put']) !!}
+                                <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
                                 <div class="form-group row">
                                     <div class="col-10">
                                         <label class="form-control-label">Наименование</label>
                                         <input type="text" name="title" value="{{$post->title}}"
-                                               class="form-control">
+                                               class="form-control" autofocus>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Дата</label>
+                                        <input name='created_at' type="text" value="{{date('m/d/Y')}}"
+                                               class="form-control input-datepicker-autoclose">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10 ">
+                                        <label class="form-control-label">Категория</label>
+                                        <select name='category_id' class="selectpicker form-control">
+                                            @foreach($categories as $category)
+                                                @if($category->id==$post->category_id)
+                                                <option value="{{$category->id}}" selected>{{$category->title}}</option>
+                                                 @else
+                                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10 ">
+                                        <label class="form-control-label">Тэги</label>
+                                        <select class="selectpicker form-control">
+                                            @foreach($tags as $tag)
+                                                <option value="{{$tag->id}}">{{$tag->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <div class="i-checks">
+                                            <input name='is_featured' id="checkboxCustom1" type="checkbox" value="{{$post->is_featured}}" checked="true"
+                                                   class="checkbox-template">
+                                            <label for="checkboxCustom1">Рекомендовать</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <div class="i-checks">
+
+                                            <input name='status' id="checkboxCustom2" type="checkbox" value="{{$post->status}}" checked="false"
+                                                   class="checkbox-template">
+                                            <label for="checkboxCustom2">Черновик</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Изображение</label>
+                                        <input id="fileInput" type="file" class="form-control">
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group row">
                                     <div class="col-xl-10">
                                         <label class="form-control-label">Полный текст</label>

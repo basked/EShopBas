@@ -27,11 +27,10 @@
                             </div>
                             <div class="block-body">
                                 {!! Form::open(['route'=>'posts.store']) !!}
-                                <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" name="title" class="form-control" autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -64,7 +63,8 @@
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <div class="i-checks">
-                                            <input name='is_featured' id="checkboxCustom1" type="checkbox" value="true" checked="true"
+                                            <input name='is_featured' id="checkboxCustom1" type="checkbox" value="1"
+                                                   checked="true"
                                                    class="checkbox-template">
                                             <label for="checkboxCustom1">Рекомендовать</label>
                                         </div>
@@ -73,15 +73,13 @@
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <div class="i-checks">
-
-                                            <input name='status' id="checkboxCustom2" type="checkbox" value="false" checked="false"
+                                            <input name='status' id="checkboxCustom2" type="checkbox" value="1"
+                                                   checked="false"
                                                    class="checkbox-template">
                                             <label for="checkboxCustom2">Черновик</label>
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Изображение</label>

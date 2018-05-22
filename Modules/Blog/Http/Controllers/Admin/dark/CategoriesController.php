@@ -64,7 +64,7 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_categories|max:64',
+            'title' => 'required|max:64',
         ]);
 
         $category = Category::find($id);

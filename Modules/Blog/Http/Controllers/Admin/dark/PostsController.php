@@ -44,11 +44,11 @@ class PostsController extends Controller
 
         $request->validate([
             'title' => 'required|unique:blog_posts|max:64',
-            'content' => 'required|max:255',
+            'content' => 'required',
             'category_id'=>'required'
 
         ]);
-return $request->all();
+//return $request->all();
         Post::create($request->all());
         return redirect()->route('posts.index');
     }
@@ -60,7 +60,9 @@ return $request->all();
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('blog::admin.dark.posts.edit', ['post' => $post]);
+        $categories = Category::all();
+        $tags= Tag::all();
+        return view('blog::admin.dark.posts.edit', ['post' => $post,'categories'=>$categories,'tags'=>$tags]);
 
     }
 
@@ -72,8 +74,8 @@ return $request->all();
     public function update(Request $request,$id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_posts|max:255',
-            'content' => 'required|max:255',
+            'title' => 'required|max:255',
+            'content' => 'required',
         ]);
 
         $post = Post::find($id);

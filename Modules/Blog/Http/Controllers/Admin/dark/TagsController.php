@@ -63,7 +63,7 @@ class TagsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|unique:blog_tags|max:64',
+            'title' => 'required|max:64',
         ]);
 
         $tag = Tag::find($id);

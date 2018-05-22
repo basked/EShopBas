@@ -39,9 +39,7 @@
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('comments.create')}}"
-                       class="btn btn-primary">Добавить
-                    </a>
+                    <button type="button" class="btn btn-primary" onclick="window.location='{{route('comments.create')}}'" autofocus>Добавить</button>
                 </div>
                 <div class="block">
                     <div class="title"><strong>Категории</strong>

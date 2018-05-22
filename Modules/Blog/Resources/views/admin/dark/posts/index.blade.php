@@ -41,9 +41,7 @@
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('posts.create')}}"
-                       class="btn btn-primary">Добавить
-                    </a>
+                    <button type="button" class="btn btn-primary" onclick="window.location='{{route('posts.create')}}'" autofocus>Добавить</button>
                 </div>
                 <div class="block">
                     <div class="title"><strong>Посты</strong>
@@ -51,12 +49,14 @@
                     </div>
                     <div class="block-body">
                         <div class="table-responsive">
-                            <table id="datatable1" style="width: 100%;" class="table">
+                            <table id="datatable1" style="width: 100%;" class="table display responsive nowrap">
                                 <thead>
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Title</th>
                                     <th scope="col">Slug</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Autor</th>
                                     <th scope="col">Action</th>
 
                                 </tr>
@@ -67,6 +67,8 @@
                                         <th scope="row">{{$post->id}}</th>
                                         <td>{{$post->title}}</td>
                                         <td>{{$post->slug}}</td>
+                                        <td>{{$post->category['title']}}</td>
+                                        <td>{{$post->autor['name']}}</td>
                                         <td>
                                             <a href="{{route('posts.edit',$post->id)}}"
                                                class="fas fa-edit edit"></a>

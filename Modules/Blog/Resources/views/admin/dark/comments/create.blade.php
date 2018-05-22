@@ -31,7 +31,7 @@
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
-                                        <input type="text" name="text" class="form-control">
+                                        <input type="text" name="text" class="form-control" autofocus>
 
                                     </div>
                                 </div>

@@ -31,7 +31,7 @@
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
                                         <input type="text" name="title" value="{{$tag->title}}"
-                                               class="form-control">
+                                               class="form-control" autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group row">

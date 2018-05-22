@@ -27,20 +27,41 @@
                             </div>
                             <div class="block-body">
                                 {!! Form::open(['route'=>'users.store']) !!}
-
+                                {{ csrf_field() }}
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Имя пользователя</label>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" placeholder="Username"  autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="form-control-label">Email</label>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address">
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Пароль</label>
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Повторить пароль</label>
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <div class="i-checks">
+                                            <input name='is_admin' id="checkboxCustom2" type="checkbox" value=1
+                                                   {{--checked="false"--}}
+                                                   class="checkbox-template">
+                                            <label class="form-control-label" for="checkboxCustom2">Администратор</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <a href="{{route('users.index')}}" class="btn btn-secondary">Назад</a>
