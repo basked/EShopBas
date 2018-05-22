@@ -26,7 +26,7 @@
                                 @include('blog::admin.dark.errors')
                             </div>
                             <div class="block-body">
-                                {!! Form::open(['route'=>['categories.update',$category->id],'method'=>'put']) !!}
+                                {!! Form::open(['route'=>['blog-update',$category->id],'method'=>'put']) !!}
                                 <div class="form-group row">
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
+                                        <a href="{{route('blog-index')}}" class="btn btn-secondary">Назад</a>
                                         <button type="submit" class="btn btn-primary pull-right">Сохранить</button>
                                     </div>
 

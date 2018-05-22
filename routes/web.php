@@ -140,3 +140,10 @@ dd(DB::table('banks')->get(['name']));
     //Artisan::call("make:controller",['name'=>'BaskController']);dd(Artisan::output());
 });
 // End test Route
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -30,7 +30,7 @@ class Tag extends Model
     // показываем только нужные поля
     protected $visible = ['title', 'slug'];
     // массовое заполнение
-    protected $fillable = ['title'];
+    protected $fillable = ['title','user_id'];
 
     public function posts()
     {

@@ -31,6 +31,7 @@
                                     <div class="col-9">
                                         <label class="form-control-label">Наименование</label>
                                         <input type="text" name="title" class="form-control">
+                                        <input type="hidden" name="user_id" value="{{Auth::id()}}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">

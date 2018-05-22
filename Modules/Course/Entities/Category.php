@@ -63,7 +63,7 @@ class Category extends Model
     {
         $client = new Client([
             'base_uri' => 'https://coursehunters.net/',
-            'timeout' => 20.0
+            'timeout' => 1800.0
         ]);
         $request = $client->request('GET', 'archive', self::getProxy());
         $categories = $request->getBody()->getContents();

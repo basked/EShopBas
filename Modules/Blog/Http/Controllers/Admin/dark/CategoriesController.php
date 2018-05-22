@@ -42,7 +42,7 @@ class CategoriesController extends Controller
         ]);
 
         Category::create($request->all());
-        return redirect()->route('categories.index');
+        return redirect()->route('blog-index');
     }
 
 
@@ -69,7 +69,7 @@ class CategoriesController extends Controller
 
         $category = Category::find($id);
         $category->update($request->all());
-        return redirect()->route('categories.index');
+        return redirect()->route('blog-index');
     }
 
     /**
@@ -79,6 +79,6 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         Category::find($id)->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('blog-index');
     }
 }

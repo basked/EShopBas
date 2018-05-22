@@ -39,7 +39,7 @@
         <section class="no-padding-top">
             <div class="container-fluid">
                 <div class="block-body text-left">
-                    <a type="button" href="{{route('categories.create')}}"
+                    <a type="button" href="{{route('blog-create')}}"
                        class="btn btn-primary">Добавить
                     </a>
                 </div>
@@ -67,10 +67,10 @@
                                         <td>{{$category->title}}</td>
                                         <td>{{$category->slug}}</td>
                                         <td>
-                                            <a  href="{{route('categories.edit',$category->id)}}"
+                                            <a  href="{{route('blog-edit',$category->id)}}"
                                                class="fas fa-edit edit"></a>
                                             <span> | </span>
-                                            {!! Form::open(['route'=>['categories.destroy',$category->id],'method'=>'delete']) !!}
+                                            {!! Form::open(['route'=>['blog-destroy',$category->id],'method'=>'delete']) !!}
                                             <button onclick=" return confirm('Удалить запись?')" type="submit" class="delete">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

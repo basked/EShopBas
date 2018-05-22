@@ -28,9 +28,41 @@
                             <div class="block-body">
                                 {!! Form::open(['route'=>'posts.store']) !!}
                                 <div class="form-group row">
-                                    <div class="col-10">
+                                    <div class="col-sm-10">
                                         <label class="form-control-label">Наименование</label>
                                         <input type="text" name="title" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Дата</label>
+                                        <input type="text" value="{{date('m/d/Y')}}" class="form-control input-datepicker-autoclose">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10 ">
+                                        <label class="form-control-label">Категория</label>
+                                        <select class="selectpicker form-control">
+                                            <optgroup label="Picnic">
+                                                <option>Mustard</option>
+                                                <option>Ketchup</option>
+                                                <option>Relish</option>
+                                            </optgroup>
+                                            <optgroup label="Camping">
+                                                <option>Tent</option>
+                                                <option>Flashlight</option>
+                                                <option>Toilet Paper</option>
+                                            </optgroup>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <label class="form-control-label">Изображение</label>
+                                        <input id="fileInput" type="file" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -44,7 +76,6 @@
                                         <a href="{{route('posts.index')}}" class="btn btn-secondary">Назад</a>
                                         <button type="submit" class="btn btn-primary pull-right">Добавить</button>
                                     </div>
-                                    </button>
                                 </div>
                             </div>
 
@@ -55,6 +86,12 @@
             </div>
         </section>
         @section('js')
+         <script>
+             $(".input-datepicker-autoclose").datepicker({
+                 autoclose: !0,
+                 format: "mm/dd/yyyy"
+             })
+         </script>
             <script src="{{ asset('css/dark-admin/js/forms-texteditor.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/components-notifications.js') }}"></script>
             <script src="{{ asset('css/dark-admin/js/front.js') }}"></script>

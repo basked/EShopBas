@@ -90,6 +90,7 @@ mix.mix.copyDirectory('node_modules/devextreme/dist/css/icons', 'Modules/Dev/Res
 //====================================
 //НАЧАЛО для работы с модулем -=BLOG=-
 mix.styles([
+    'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',
     'node_modules/admin-lte/dist/css/adminlte.min.css',
     'node_modules/admin-lte/plugins/iCheck/flat/blue.css',
     'node_modules/admin-lte/plugins/morris/morris.css',
@@ -101,6 +102,7 @@ mix.styles([
 ], 'Modules/Blog/Resources/assets/css/Blog_admin.css');
 
 mix.scripts([
+    'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'node_modules/admin-lte/plugins/jquery/jquery.min.js',
    // 'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
     'node_modules/admin-lte/plugins/morris/morris.min.js',

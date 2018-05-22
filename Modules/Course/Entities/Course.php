@@ -57,7 +57,7 @@ class Course extends Model
      * @param bool $isActive
      * @return array
      */
-    private static function getProxy($isActive = false)
+    private static function getProxy($isActive = true)
     {
         $proxy = [];
         if ($isActive == true) {
@@ -76,7 +76,7 @@ class Course extends Model
     {
         $client = new Client([
             'base_uri' => 'https://coursehunters.net/',
-            'timeout' => 20.0
+            'timeout' => 1800.0
         ]);
         $request = $client->request('GET', "frontend?page=$page", self::getProxy());
         $courses = $request->getBody()->getContents();
