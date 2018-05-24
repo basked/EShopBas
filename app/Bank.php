@@ -38,9 +38,9 @@ use Exception;
 class Bank extends Model
 {
     // для выгрузки в Json
-  // protected $with = ['offices'];
+   protected $with = ['offices'];
     // поля видны для Json
-    protected $visible = ['id','name','link','site','bank_site_id','status_id','created_at'];//,'created_at','offices'];
+    protected $visible = ['id','name','link','site','bank_site_id','status_id','created_at','offices'];
     protected $fillable=['id','name','link','site','bank_site_id','status_id','created_at'];
     // Связь с отделениями для банка
     public function offices()

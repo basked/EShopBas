@@ -51,7 +51,7 @@ var gridDataSource = new DevExpress.data.DataSource({
 var devData = new DevExpress.data.DataSource("dev-grid-data");
 
 
-//var devMasterDetailData = new DevExpress.data.DataSource("dev-grid-data");
+var devMasterDetailData = new DevExpress.data.DataSource("dev-grid-data");
 
 // передаём в грид
 $(function () {
@@ -180,6 +180,7 @@ $(function () {
                             mode: "multiple"
                         },
                         dataSource: currentEmployeeData.offices,
+                        searchPanel: {visible: true},
                         masterDetail: {
                             enabled: true,
                             template: function (container, options) {
