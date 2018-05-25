@@ -15,7 +15,8 @@ class DevController extends Controller
      */
     public function index()
     {
-        return view('dev::index');
+       // return view('dev::index');
+        return view('dev::video');
     }
 
     /**
