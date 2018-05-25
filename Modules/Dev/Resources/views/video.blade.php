@@ -7,20 +7,22 @@
 </head>
 
 <body>
-<video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+<video autoply id="my-video" class="video-js" controls preload="auto" width="640" height="264"
        data-setup="{}">
-    <source src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson1.mp4" type='video/mp4'>
-    <source src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson2.mp4" type='video/mp4'>
-    <source src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson3.mp4" type='video/mp4'>
-    <source src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson4.mp4" type='video/mp4'>
-    <source src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson5.mp4" type='video/mp4'>
-
+    <source  src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson1.mp4" type='video/mp4'>
     <p class="vjs-no-js">
         To view this video please enable JavaScript, and consider upgrading to a web browser that
         <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
 </video>
-
+<video autoply id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+       data-setup="{}">
+    <source  src="https://vs1.coursehunters.net/webformyself-comlete-vue-guide-course/lesson2.mp4" type='video/mp4'>
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video>
 <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
 </body>
 </html>
