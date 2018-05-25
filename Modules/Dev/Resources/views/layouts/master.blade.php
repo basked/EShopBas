@@ -14,7 +14,7 @@
         {{--<link rel="dx-theme" data-theme="generic.dark" href="{{ Module::asset('Dev:css/dx.dark.css')}}" data-active="false">--}}
         {{--<link rel="dx-theme" data-theme="generic.light.compact" href="{{ Module::asset('Dev:css/dx.light.compact.css')}}" data-active="false">--}}
         {{--<link rel="dx-theme" data-theme="generic.dark.compact" href="{{ Module::asset('Dev:css/dx.dark.compact.css')}}" data-active="false">--}}
-        <link rel="dx-theme" data-theme="generic.darkmoon" href="{{ Module::asset('Dev:css/dx.darkmoon.css')}}" data-active="true">
+        <link rel="stylesheet" type="text/css" href="{{ Module::asset('Dev:css/dx.darkmoon.css')}}" />
         {{--<link rel="dx-theme" data-theme="generic.darkmoon.compact" href="{{ Module::asset('Dev:css/dx.darkmoon.compact.css')}}" data-active="false">--}}
         {{--<link rel="dx-theme" data-theme="generic.carmine" href="{{ Module::asset('Dev:css/dx.carmine.css')}}" data-active="false">--}}
         {{--<link rel="dx-theme" data-theme="generic.carmine.compact" href="{{ Module::asset('Dev:css/dx.carmine.compact.css')}}" data-active="false">--}}
@@ -32,7 +32,7 @@
 
         <title>Module Dev</title>
     </head>
-    <body >
+    <body class="dx-viewport">
         @yield('content')
         <script src="{{ Module::asset('Dev:js/Dev_script.js') }}"></script>
         <script src="{{ Module::asset('Dev:js/data.js') }}"></script>

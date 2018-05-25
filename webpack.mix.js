@@ -32,11 +32,11 @@ mix.scripts([
 
     'node_modules/jquery/dist/jquery.min.js',
     <!-- A DevExtreme library -->
-    'node_modules/devextreme/dist/js/dx.all.js'
+    'node_modules/devextreme/dist/js/dx.all.js',
     // 'node_modules/devextreme/dist/js/dx.mobile.js',
-    // 'node_modules/devextreme/dist/js/dx.viz.js',
+    //  'node_modules/devextreme/dist/js/dx.viz.js',
     // 'node_modules/devextreme/dist/js/dx.web.js',
-    // 'node_modules/devextreme/dist/js/dx.viz-web.js',
+   // 'node_modules/devextreme/dist/js/dx.viz-web.js',
 ], 'Modules/Dev/Resources/assets/js/Dev_script.js');
 
 // дополнительные скрипты
