@@ -2,6 +2,7 @@
 
 namespace Modules\Dev\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -68,5 +69,17 @@ class DevController extends Controller
      */
     public function destroy()
     {
+    }
+
+    public function bestKurses(){
+        $bestKuks=DB::table('banks')
+            ->leftJoin('bank_kurs', 'banks.id', '=', 'bank_kurs.bank_id')
+            ->select('banks.name',  DB::raw('min(prodaja) as min_prodaja'))
+            ->where('bank_kurs.prodaja','>',0)
+            ->where('bank_kurs.status_id','=',1)
+            ->groupBy('banks.name')->orderBy('min_prodaja','desc')
+            ->havingRaw('min(prodaja) > 0')
+            ->get()->toJson();
+        return $bestKuks;
     }
 }
