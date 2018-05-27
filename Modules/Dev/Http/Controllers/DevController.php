@@ -15,8 +15,8 @@ class DevController extends Controller
      */
     public function index()
     {
-       // return view('dev::index');
-        return view('dev::video');
+        return view('dev::index');
+        // return view('dev::video');
     }
 
     /**
@@ -82,5 +82,29 @@ class DevController extends Controller
             ->havingRaw('min(prodaja) > 0')
             ->get()->toJson();
         return $bestKuks;
+    }
+
+    public function bestKursesPivot(){
+//        $bestKuks=DB::table('banks')
+//            ->leftJoin('bank_kurs', 'banks.id', '=', 'bank_kurs.bank_id')
+//            ->select('banks.name',  DB::raw('b.name ,CONCAT(cast(EXTRACT(YEAR_MONTH FROM bk.created_at) AS CHAR), cast(EXTRACT(DAY_MINUTE FROM bk.created_at) AS CHAR)) AS Year_to_min,bk.currencies CURR,MAX(bk.pokupka) MIN_POKUPKA,MIN(bk.prodaja) MAX_PRoDAJA'))
+//            ->where('bank_kurs.prodaja','>',0)
+//            ->where('bank_kurs.pokupka','>',0)
+//            ->groupBy('b.name' ,'CONCAT(cast(EXTRACT(YEAR_MONTH FROM bk.created_at) AS CHAR), cast(EXTRACT(DAY_MINUTE FROM bk.created_at) AS CHAR))','bk.currencies')->orderBy('name','desc')
+//            ->get()->toJson();
+
+        $bestKursParse = DB::select('SELECT
+  b.name ,CONCAT(cast(EXTRACT(YEAR_MONTH FROM bk.created_at) AS CHAR)
+  , cast(EXTRACT(DAY_MINUTE FROM bk.created_at) AS CHAR)) AS Year_to_min,
+  bk.currencies CURR,
+  MAX(bk.pokupka) MIN_POKUPKA,
+  MIN(bk.prodaja) MAX_PRODAJA
+FROM banks b, bank_kurs bk
+WHERE b.id = bk.bank_id and bk.prodaja>0 AND bk.pokupka>0
+GROUP BY CONCAT(cast(EXTRACT(YEAR_MONTH FROM bk.created_at) AS CHAR)
+, cast(EXTRACT(DAY_MINUTE FROM bk.created_at) AS CHAR)),
+b.name,bk.currencies
+order by 1 asc, 2 desc');
+        return $bestKursParse;
     }
 }

@@ -83,8 +83,14 @@ mix.copy('node_modules/devextreme/dist/css/dx.win8.black.css', 'Modules/Dev/Reso
 mix.copy('node_modules/devextreme/dist/css/dx.win8.white.css', 'Modules/Dev/Resources/assets/css/dx.win8.white.css');
 mix.copy('node_modules/devextreme/dist/css/dx.win10.black.css', 'Modules/Dev/Resources/assets/css/dx.win10.black.css');
 mix.copy('node_modules/devextreme/dist/css/dx.win10.white.css', 'Modules/Dev/Resources/assets/css/dx.win10.white.css');
-//иконки
+mix.copy('node_modules/devextreme/dist/css/dx.material.blue.light.css', 'Modules/Dev/Resources/assets/css/dx.material.blue.light.css');
+mix.copy('node_modules/devextreme/dist/css/dx.material.lime.light.css', 'Modules/Dev/Resources/assets/css/dx.material.lime.light.css');
+mix.copy('node_modules/devextreme/dist/css/dx.material.orange.light.css', 'Modules/Dev/Resources/assets/css/dx.material.orange.light.css');
+mix.copy('node_modules/devextreme/dist/css/dx.material.purple.light.css', 'Modules/Dev/Resources/assets/css/dx.material.purple.light.css');
+mix.copy('node_modules/devextreme/dist/css/dx.material.teal.light.css', 'dx.material.teal.light.css');
+    //иконки
 mix.mix.copyDirectory('node_modules/devextreme/dist/css/icons', 'Modules/Dev/Resources/assets/css/icons');
+
 
 //КОНЕЦ для работы с модулем -=DEV=-
 //====================================

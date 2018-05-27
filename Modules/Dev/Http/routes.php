@@ -4,4 +4,5 @@ Route::group(['middleware' => 'web', 'prefix' => 'dev', 'namespace' => 'Modules\
 {
     Route::get('/', 'DevController@index');
     Route::get('/bestKurses', 'DevController@bestKurses');
+    Route::get('/bestKursesPivot', 'DevController@bestKursesPivot');
 });

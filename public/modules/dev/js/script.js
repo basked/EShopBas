@@ -4,7 +4,7 @@ $.ajaxSetup({
     }
 });
 
-$(function(){
+$(function () {
     $("#gridContainer").dxDataGrid({
         dataSource: orders,
         columnHidingEnabled: true,
@@ -44,14 +44,14 @@ $(function(){
             dataField: "OrderNumber",
             caption: "Invoice Number",
             width: 130
-        },  {
+        }, {
             caption: "City",
             dataField: "CustomerStoreCity"
         }, {
             caption: "State",
             dataField: "CustomerStoreState"
         },
-            "Employee",{
+            "Employee", {
                 dataField: "OrderDate",
                 dataType: "date"
             }, {
@@ -70,7 +70,7 @@ var bestKursesDataSource = new DevExpress.data.DataSource({
     }
 });
 
-$(function(){
+$(function () {
     $("#chart").dxChart({
         rotated: true,
         dataSource: bestKursesDataSource,
@@ -87,7 +87,7 @@ $(function(){
         title: "Курсы валют",
         argumentAxis: {
             label: {
-                customizeText: function() {
+                customizeText: function () {
                     return this.valueText;
                 }
             }
@@ -105,3 +105,65 @@ $(function(){
         }
     });
 });
+
+
+/*Panels*/
+var pivotGridStore = new DevExpress.data.CustomStore({
+
+    load: function (loadOptions) {
+        return $.getJSON('/dev/bestKursesPivot');
+    }
+});
+
+
+$(function () {
+    $("#pivotgrid").dxPivotGrid({
+        allowSortingBySummary: true,
+        allowFiltering: true,
+        showBorders: true,
+        allowFieldDragging: true,
+        showColumnGrandTotals: false,
+        showRowGrandTotals: false,
+        showRowTotals: true,
+        showColumnTotals: false,
+        fieldChooser: {
+            enabled: true,
+            height: 400
+        },
+        dataSource: {
+            fields: [{
+                area: 'column',
+                caption: 'Валюта',
+                dataField: 'CURR',
+                dataType: 'string'
+            },{
+                area: 'data',
+                caption: 'min',
+                width: 20,
+                format: "#.####",
+                dataField: 'MIN_POKUPKA',
+                dataType: 'number',
+                summaryType: "min"
+            }, {
+                area: 'data',
+                caption: 'max',
+                width: 20,
+                format: "#.####",
+                dataField: 'MAX_PRODAJA',
+                dataType: 'number',
+                summaryType: "max"
+            },  {
+                area: 'row',
+                format: "####.##.##.##:##",
+                dataField: 'Year_to_min',
+                dataType: 'string'
+                },
+                {
+                area: 'row',
+                    dataField: 'name',
+                    dataType: 'string'
+                }],
+            store: pivotGridStore
+        }
+    })
+})

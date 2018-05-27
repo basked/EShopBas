@@ -4,7 +4,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.5/css/dx.spa.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.5/css/dx.common.css"/>
-    <link rel="dx-theme" data-theme="generic.contrast.compact" href="{{ Module::asset('Dev:css/dx.basked.compact.css')}}" data-active="true">
+    <link rel="dx-theme" data-theme="generic.contrast.compact" href="{{ Module::asset('Dev:css/dx.material.orange.light.css')}}" data-active="true">
 @endsection
 @extends('layouts.layout')
 @section('content')
